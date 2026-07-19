@@ -7,8 +7,8 @@ This repository contains all of my assignments and tasks completed during the **
 
 ## 📁 Demos 
 
-## assignment 2 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment2-01004369345/
-## assignment 3 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment3-01004369345/
+1. assignment 2 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment2-01004369345/
+2. assignment 3 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment3-01004369345/
 
 
 ## 📁 Repository Structure
