@@ -47,6 +47,7 @@ i {
 .nav .nav-links li {
     margin: 0 10px;
     position: relative;
+    display: none;
 
 }
 
@@ -121,14 +122,15 @@ i {
     border: 1px solid gray;
     padding: 20px;
     border-radius: 20px;
-    width: 50%;
+    width: 100%;
     position: relative;
+    margin-bottom: 20px;
 
 
 }
 
 .home .content {
-    width: 45%;
+    width: 100%;
 }
 
 .home .content h2 {
@@ -413,7 +415,7 @@ table tbody .overall-rating {
 .winner {
     display: flex;
     flex-wrap: wrap;
-    width: 33%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     background-color: #FFFFFF;
@@ -499,9 +501,7 @@ table tbody .overall-rating {
 }
 
 .Customers-Say .container .comments .rate {
-    min-width: 30%;
-    max-width: 100%;
-    position: sticky;
+    width: 100%;
     top: 80px;
     border: 2px solid rgba(128, 128, 128, 0.274);
     border-radius: 20px;
@@ -602,7 +602,8 @@ table tbody .overall-rating {
 }
 
 .Customers-Say .container .comments .comment {
-    width: 65%;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .Customers-Say .container .comments .comment .card {
@@ -739,8 +740,8 @@ table tbody .overall-rating {
 
 .related-product .cards .card {
     background-color: white;
-    width: 23%;
-
+    width: 100%;
+    margin-bottom: 20px;
     border: 2px solid rgba(128, 128, 128, 0.151);
     border-radius: 20px;
     padding: 20px;
@@ -810,7 +811,7 @@ table tbody .overall-rating {
 }
 
 .related-product .cards .card .price button {
-    min-width: 100px;
+    width: 50%;
     background-color: #8E51FF;
     color: white;
     font-size: 17px;
@@ -857,8 +858,11 @@ table tbody .overall-rating {
     flex-wrap: wrap;
 }
 
-.footer .icon {
-    width: 30%;
+.footer .icon,
+.footer .products,
+.footer .support,
+.footer .company {
+    width: 100%;
     text-align: left;
 }
 
@@ -906,8 +910,6 @@ table tbody .overall-rating {
     flex-direction: column;
     align-items: flex-start;
 
-
-
 }
 
 .footer li a {
@@ -926,13 +928,6 @@ table tbody .overall-rating {
 }
 
 
-
-
-
-
-
-
-
 .footer hr {
     border: none;
     height: 1px;
@@ -946,37 +941,134 @@ table tbody .overall-rating {
     align-items: center;
     width: 100%;
     margin-top: 30px;
+    flex-wrap: wrap;
 
 }
 
 .footer .last .copyrights {
-    width: 80%;
+    width: 100%;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     font-weight: 400;
 }
 
 .footer .last .logos {
-    width: 20%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
 }
 
 .footer .last .logos .card {
-    width: 30%;
+    width: 70px;
     border-radius: 10px;
     background-color: white;
     padding: 10px;
+    margin: 0 5px;
 
 }
 
+
 .footer .last .logos .mastercard {
-    width: 20%;
+    width: 50px;
 }
 
 .footer .last .logos img {
     width: 100%;
 
+}
+
+/* ////////////////////media query///////////////////////// */
+/* sm */
+@media screen and (min-width: 640px) {
+    .winner {
+        width: 80%;
+    }
+}
+
+/* md */
+@media screen and (min-width: 768px) {
+    .winner {
+        width: 70%;
+    }
+
+    .related-product .cards .card {
+        width: 48%;
+    }
+
+    .footer .icon,
+    .footer .products,
+    .footer .support,
+    .footer .company {
+        width: 40%;
+    }
+}
+
+/* 1g */
+@media screen and (min-width: 1024px) {
+    .nav .nav-links li {
+        display: inline-block;
+    }
+
+    .home .img {
+        width: 50%;
+    }
+
+    .home .content {
+        width: 45%;
+    }
+
+    .winner {
+        width: 50%;
+    }
+
+    .Customers-Say .container .comments .rate {
+        width: 30%;
+        position: sticky;
+    }
+
+    .Customers-Say .container .comments .comment {
+        width: 65%;
+        margin-top: 0px;
+    }
+
+    .related-product .cards .card {
+        width: 23%;
+    }
+
+    .footer .icon,
+    .footer .products,
+    .footer .support,
+    .footer .company {
+        width: 24%;
+    }
+
+    .footer .last .copyrights {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .footer .last .logos {
+        width: 20%;
+    }
+
+
+}
+
+/* x1 */
+@media screen and (min-width: 1280px) {
+    .winner {
+        width: 40%;
+    }
+
+
+}
+
+/* xx1 */
+@media screen and (min-width: 1536px) {
+    .winner {
+        width: 33%;
+    }
 }
