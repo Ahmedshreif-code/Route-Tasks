@@ -4,6 +4,13 @@ Welcome to my **Route Academy Tasks** repository!
 
 This repository contains all of my assignments and tasks completed during the **Route Academy** training.
 
+
+## 📁 Demos 
+
+## assignment 2 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment2-01004369345/
+## assignment 3 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment3-01004369345/
+
+
 ## 📁 Repository Structure
 
 - Each folder represents a separate task or project.
