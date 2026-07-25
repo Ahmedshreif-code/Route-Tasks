@@ -9,6 +9,10 @@ body {
     height: 1000000px;
 }
 
+*::selection {
+    color: black;
+    background-color: #FFD15B;
+}
 
 
 .clr {
@@ -181,6 +185,7 @@ a {
     font-size: 12px;
     line-height: 18px;
     font-weight: 700;
+    border: 2px solid black;
     width: 140px;
     padding: 10px;
     margin: 30px 0;
@@ -220,7 +225,6 @@ a {
 
 .home .content .buttons button {
     width: 45%;
-    height: 90px;
     margin: 30px 0;
     margin-right: 10px;
     border: 6px solid black;
@@ -241,8 +245,6 @@ a {
     box-shadow: 6px 6px 0 #000;
 
 }
-
-
 
 .home .content .buttons button:hover {
     box-shadow: 0px 0px 0 black;
