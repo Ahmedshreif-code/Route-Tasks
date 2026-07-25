@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    font-family: "Exo ", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 1000000px;
+}
+
+
+
+.clr {
+    clear: both;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+
+}
+
+li,
+i,
+h1,
+span,
+a {
+    display: inline-block;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+}
+
+.nav {
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav .links,
+.nav .button {
+    display: none;
+}
+
+.nav .title h1 {
+    font-size: 26px;
+    line-height: 32px;
+
+}
+
+.nav .title h1 span {
+    color: oklch(0.705 0.213 47.604);
+    font-weight: 800;
+}
+
+.nav .links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all 0.3s;
+    font-weight: 600;
+
+}
+
+.nav .links li a:hover {
+    color: #FF7A50;
+}
+
+.nav .links i {
+    color: #D1D5DC;
+    margin: 0 10px;
+    font-size: 13px;
+}
+
+.nav .button button {
+    width: 150px;
+    height: 40px;
+    border-radius: 500px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    background-color: #FFD15B;
+    transition: all 0.5s;
+}
+
+.nav .button button:hover {
+    transform: translateX(3px) translateY(3px);
+}
+
+.nav .menu {
+
+    font-size: 24px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 8px;
+    box-shadow: 4px 4px 0 #000;
+    transition: all 0.5s;
+
+
+}
+
+.nav .menu:hover {
+    transform: translateY(-3px);
+}
+
+/* ///////////////////////////////////////////////////home///////////////////////////////////////////////////// */
+.home {
+    width: 100%;
+    background-color: oklch(94.727% 0.13021 101.974 / 0.815);
+    padding-top: 100px;
+    position: relative;
+    border-bottom: 4px solid black;
+}
+
+.home .rect1 {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: rotate(12deg);
+    z-index: -1;
+}
+
+.home .rect2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    top: 40%;
+    right: 20%;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.home .rect3 {
+    width: 130px;
+    height: 130px;
+    background-color: blue;
+    position: absolute;
+    bottom: 20%;
+    left: 33.333%;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.home .parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home .content {
+    width: 100%;
+}
+
+
+
+
+.sign {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    width: 140px;
+    padding: 10px;
+    margin: 30px 0;
+    box-shadow: 4px 4px 0 #000;
+    transform: rotate(-2deg);
+}
+
+.home .title h2 {
+    font-size: 57px;
+    line-height: 70px;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.home .title .red {
+    color: red;
+}
+
+.home .title .blue {
+    color: blue;
+}
+
+.home .content .paragraph {
+    border: 2px solid black;
+    background-color: white;
+    padding: 20px;
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: 500;
+    box-shadow: 4px 4px 0 #000;
+    margin: 10px 0;
+}
+
+.home .content .buttons {
+    width: 100%;
+}
+
+.home .content .buttons button {
+    width: 45%;
+    height: 90px;
+    margin: 30px 0;
+    margin-right: 10px;
+    border: 6px solid black;
+    background-color: black;
+    color: white;
+    box-shadow: 6px 6px 0 #000;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.home .content .buttons .btn-white {
+    background-color: white;
+    color: #000;
+    box-shadow: 6px 6px 0 #000;
+
+}
+
+
+
+.home .content .buttons button:hover {
+    box-shadow: 0px 0px 0 black;
+    transform: translateX(6px)translateY(6px);
+}
+
+.home .photo {
+    width: 100%;
+    position: relative;
+}
+
+.home .photo .sign {
+    position: absolute;
+    top: -10%;
+    right: -4%;
+    width: 110px;
+    z-index: 100;
+    background-color: red;
+    transform: rotate(10deg);
+}
+
+.home .photo .pic {
+    width: 100%;
+    height: 350px;
+    border: 4px solid black;
+    box-shadow: 4px 4px 0 #000;
+    overflow: hidden;
+    margin-bottom: 40px;
+    transition: all 0.5s;
+
+}
+
+.home .photo .pic:hover {
+    transform: translateX(-5px) translateY(-5px);
+}
+
+.home .photo .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+/* ////////////////////media query///////////////////////// */
+/* sm */
+@media screen and (min-width: 640px) {}
+
+/* md */
+@media screen and (min-width: 768px) {
+    .nav .title h1 {
+        font-size: 30px;
+        line-height: 36px;
+
+    }
+
+
+
+    .sign {
+        font-size: 14px;
+        line-height: 20px;
+        width: 160px;
+    }
+
+    .home .title h2 {
+        font-size: 58px;
+        line-height: 80px;
+    }
+
+    .home .content .paragraph {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 20px 0;
+    }
+
+    .home .content .buttons button {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 50px;
+    }
+}
+
+/* 1g */
+@media screen and (min-width: 1024px) {
+    .home .content {
+        width: 50%;
+    }
+
+    .home .photo {
+        width: 40%;
+        position: relative;
+    }
+
+    .home .photo .sign {
+        top: -4%;
+        right: -4%;
+        width: 110px;
+    }
+
+    .home .photo .pic {
+        transform: rotate(5deg);
+
+
+    }
+
+
+    .home .photo .pic:hover {
+        transform: translateX(-5px) translateY(-5px) rotate(5deg);
+    }
+
+}
+
+/* x1 */
+@media screen and (min-width: 1280px) {
+
+    .nav .links,
+    .nav .button {
+        display: flex;
+    }
+
+    .nav .menu {
+        display: none;
+    }
+}
+
+/* xx1 */
+@media screen and (min-width: 1536px) {}
