@@ -135,7 +135,7 @@ a {
     border-bottom: 4px solid black;
 }
 
-.home .rect1 {
+.rect1 {
     width: 150px;
     height: 150px;
     background-color: black;
@@ -146,7 +146,7 @@ a {
     z-index: -1;
 }
 
-.home .rect2 {
+.rect2 {
     width: 100px;
     height: 100px;
     background-color: rgb(255, 0, 0);
@@ -610,6 +610,196 @@ a {
     background-color: #DAB2FF;
 }
 
+/* /////////////////////////////authors///////////////////////////////////////////////////////////////////////// */
+.authors {
+    background-color: oklch(87.81% 0.16869 91.863 / 0.95);
+    position: relative;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 4px solid black;
+
+
+}
+
+.authors .rect1 {
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    top: 10%;
+    right: 10%;
+}
+
+.authors .rect2 {
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 10%;
+    left: 10%;
+}
+
+.authors .head h2 {
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 900;
+}
+
+.authors .head p {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    color: oklch(0.439 0 0);
+    margin: 10px 0;
+    position: relative;
+}
+
+.authors .head p::after {
+    content: " ";
+    width: 130px;
+    height: 8px;
+    background-color: #000;
+    position: absolute;
+    bottom: -60%;
+    right: 35%;
+}
+
+.authors .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.authors .cards .card {
+    width: 100%;
+    border: 4px solid black;
+    box-shadow: 6px 6px 0 #000;
+    margin: 30px 0;
+    padding: 20px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+
+.authors .cards .card .photo img {
+    width: 130px;
+    height: 100%;
+    border: 4px solid black;
+    object-fit: cover;
+}
+
+.authors .cards .card .title {
+    margin: 20px 0;
+}
+
+.authors .cards .card .title h3 {
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 32px;
+}
+
+.authors .cards .card .title p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    color: oklch(0.439 0 0);
+}
+
+.authors .cards .card .content p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    padding: 10px;
+}
+
+.authors .cards .card .sign {
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 70px;
+    font-size: 12px;
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 0 black;
+    transform: rotate(10deg);
+
+}
+
+.authors .cards .card .icons a {
+    text-decoration: none;
+    color: white;
+    background-color: #000;
+    border: 3px solid black;
+    padding: 10px 12px;
+    margin: 5px 5px;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.authors .cards .card .icons a:hover {
+    background-color: #1DA1F2;
+    box-shadow: 4px 4px 0px black;
+    transform: translate(-4px, -4px);
+}
+
+.authors .cards .card .icons .linked-in:hover {
+    background-color: #155DFC;
+
+}
+
+.authors .cards .card .icons .insta:hover {
+    background-color: #E60076;
+
+}
+
+.authors .cards .card:hover {
+    transform: translate(-3px, -3px);
+
+}
+
+
+
+.authors .cards .card-blue .sign {
+    background-color: #155DFC;
+    transform: rotate(-10deg);
+
+}
+
+.authors .cards .card-purple .sign {
+    background-color: #9810FA;
+
+    transform: rotate(30deg);
+
+}
+
+.authors .cards .card-yellow {
+    background-color: #FEF9C2;
+}
+
+.authors .cards .card-yellow:hover h3 {
+    color: red;
+}
+
+.authors .cards .card-blue {
+    background-color: #DBFCE7;
+}
+
+
+.authors .cards .card-blue:hover h3 {
+    color: #155DFC;
+}
+
+.authors .cards .card-purple {
+    background-color: #FCE7F3;
+}
+
+
+.authors .cards .card-purple:hover h3 {
+    color: #9810FA;
+}
+
+
+
 
 
 
@@ -733,6 +923,35 @@ a {
         line-height: 24px;
     }
 
+    .authors .head h2 {
+        font-size: 48px;
+        line-height: 48px;
+
+    }
+
+    .authors .head p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .authors .head p::after {
+        right: 45%;
+    }
+
+    .authors .cards .card .title h3 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .authors .cards .card .title p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .authors .cards .card .content p {
+        font-size: 16px;
+        line-height: 26px;
+    }
 }
 
 /* 1g */
@@ -774,10 +993,12 @@ a {
 
     }
 
-    /* .last-article .side-bar .trending-card,
-    .last-article .side-bar .category {
-        width: 80%;
-    } */
+    .authors .cards .card {
+        width: 48%;
+
+
+    }
+
 
 
 
@@ -803,6 +1024,11 @@ a {
         width: 77%;
     }
 
+    .authors .cards .card {
+        width: 30%;
+
+
+    }
 }
 
 /* xx1 */
