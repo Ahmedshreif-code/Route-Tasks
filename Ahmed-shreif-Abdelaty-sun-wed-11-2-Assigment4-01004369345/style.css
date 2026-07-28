@@ -251,7 +251,7 @@ a {
 }
 
 .home .content .buttons button:hover {
-    box-shadow: 0px 0px 0 black;
+    box-shadow: 0 0 0 black;
     transform: translateX(6px)translateY(6px);
 }
 
@@ -478,7 +478,7 @@ a {
 }
 
 .last-article .cards button:hover {
-    box-shadow: 0px 0px 0 black;
+    box-shadow: 0 0 0 black;
     transform: translateX(4px)translateY(4px);
 
 }
@@ -574,7 +574,7 @@ a {
 
 .last-article .side-bar .category h4:hover {
     background-color: #FFDF20;
-    box-shadow: 5px 5px 0px black;
+    box-shadow: 5px 5px 0 black;
     transform: translate(-5px, -5px);
 }
 
@@ -632,7 +632,7 @@ a {
 .authors .rect2 {
     position: absolute;
     top: auto;
-    left: auto;
+    right: auto;
     bottom: 10%;
     left: 10%;
 }
@@ -720,7 +720,7 @@ a {
     font-size: 12px;
     margin: 10px;
     padding: 5px;
-    box-shadow: 0px 0px 0 black;
+    box-shadow: 0 0 0 black;
     transform: rotate(10deg);
 
 }
@@ -738,7 +738,7 @@ a {
 
 .authors .cards .card .icons a:hover {
     background-color: #1DA1F2;
-    box-shadow: 4px 4px 0px black;
+    box-shadow: 4px 4px 0 black;
     transform: translate(-4px, -4px);
 }
 
@@ -798,8 +798,183 @@ a {
     color: #9810FA;
 }
 
+/*/////////////////// community//////////////////////////////////// */
+.community {
+    background-color: #F5F5F5;
+    padding: 40px 0;
+    border-bottom: 4px solid black;
+}
+
+.community .head {
+    margin-bottom: 40px;
+}
+
+.community .head h2 {
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.community .head p {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    color: oklch(0.439 0 0);
+    margin: 10px 0;
+    position: relative;
+    text-align: center;
+}
+
+.community .head p::after {
+    content: " ";
+    width: 130px;
+    height: 8px;
+    background-color: #000;
+    position: absolute;
+    bottom: -60%;
+    right: 35%;
+}
+
+.community .body .content h3 {
+    font-size: 32px;
+    line-height: 35px;
+    font-weight: 900;
+}
+
+.community .body .content p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    margin: 20px 0;
+    border: 3px solid black;
+    box-shadow: 3px 3px 0 black;
+    padding: 10px;
+}
+
+.community .body .icons .icon {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.community .body .icons .icon i {
+    width: 40px;
+    background-color: red;
+    padding: 10px;
+    color: white;
+    border: 2px solid black;
+}
+
+.community .body .icons .icon .fa-discord {
+    background-color: #2B7FFF;
+}
+
+.community .body .icons .icon .fa-star {
+    background-color: #AD46FF;
+}
+
+.community .body .icons .icon .fa-pen {
+    background-color: #00C950;
+}
 
 
+.community .body .icons .icon span {
+    width: 87%;
+    text-align: left;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.community .body button {
+    background-color: #000;
+    color: white;
+    width: 300px;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 4px 4px 0 black;
+    transition: all 0.3s;
+}
+
+.community .body button:hover {
+    box-shadow: 0px 0px 0 black;
+    transform: translate(4px, 4px);
+}
+
+.community .body .sidebar {
+    border: 3px solid black;
+    box-shadow: 5px 5px 0 black;
+    padding: 30px;
+}
+
+.community .body .sidebar h3 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.community .body .sidebar .card {
+    border: 2px solid black;
+    background-color: #FEF2F2;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.community .body .sidebar .card-b {
+    background-color: #EFF6FF;
+}
+
+.community .body .sidebar .card-p {
+    background-color: #FAF5FF;
+}
+
+.community .body .sidebar .card p {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.community .body .sidebar .card .info {
+    display: flex;
+}
+
+.community .body .sidebar .card .info .photo {
+    width: 50px;
+    border: 2px solid black;
+
+}
+
+.community .body .sidebar .card .info .photo img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.community .body .sidebar .card .info .name {
+    margin: 0 10px;
+}
+
+.community .body .sidebar .card .info .name h4 {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+.community .body .sidebar .card .info .name p {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    margin: 0;
+    color: oklch(0.439 0 0);
+}
+
+/*////////////////////// footer///////////////////// */
 
 
 
@@ -934,6 +1109,8 @@ a {
         line-height: 28px;
     }
 
+
+
     .authors .head p::after {
         right: 45%;
     }
@@ -952,7 +1129,65 @@ a {
         font-size: 16px;
         line-height: 26px;
     }
+
+    .community .head p::after {
+        right: 45%;
+    }
+
+    .community .head h2 {
+        font-size: 48px;
+        line-height: 48px;
+
+    }
+
+    .community .head p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .community .body .content h3 {
+        font-size: 36px;
+        line-height: 40px;
+
+    }
+
+    .community .body .content p {
+        font-size: 20px;
+        line-height: 33px;
+    }
+
+    .community .body .icons .icon span {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .community .body button {
+        width: 320px;
+        font-size: 23px;
+    }
+
+    .community .body .sidebar h3 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .community .body .sidebar .card p {
+        font-size: 18px;
+        line-height: 29px;
+    }
+
+    .community .body .sidebar .card .info .name h4 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .community .body .sidebar .card .info .name p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
 }
+
 
 /* 1g */
 @media screen and (min-width: 1024px) {
@@ -999,8 +1234,32 @@ a {
 
     }
 
+    .community .body {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
 
+    .community .body .sidebar {
+        width: 100%;
+        width: 50%;
+    }
 
+    .community .body .content {
+        width: 50%;
+        height: 100%;
+    }
+
+    .community .body .icons .icon {
+
+        margin: 40px 0;
+
+    }
+
+    .community .body .icons .icon i {
+        padding: 15px;
+        width: 50px;
+    }
 
 }
 
