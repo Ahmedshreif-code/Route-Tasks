@@ -1369,6 +1369,14 @@ a {
         line-height: 24px;
     }
 
+    .footer .newsletter {
+        width: 75%;
+    }
+
+    .footer .category {
+        width: 10%;
+    }
+
 }
 
 
