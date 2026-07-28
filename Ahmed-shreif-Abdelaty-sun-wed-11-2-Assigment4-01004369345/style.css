@@ -5,10 +5,6 @@
     scroll-behavior: smooth;
 }
 
-body {
-    height: 1000000px;
-}
-
 *::selection {
     color: black;
     background-color: #FFD15B;
@@ -975,6 +971,153 @@ a {
 }
 
 /*////////////////////// footer///////////////////// */
+.footer {
+    background-color: #000000;
+    padding: 40px 0;
+    color: white;
+}
+
+.footer .container .top,
+.footer .container .bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer .head,
+.footer .category,
+.footer .newsletter {
+    width: 100%;
+}
+
+.footer .head .title {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.footer .head .title i {
+    background-color: white;
+    color: #000;
+    font-size: 24px;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.footer .head .title h2 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 900;
+}
+
+.footer p {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.footer h3 {
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: 900;
+}
+
+.footer .category {
+    margin: 20px 0;
+}
+
+.footer .category ul {
+    padding: 0;
+}
+
+.footer .category ul li {
+    display: block;
+    margin: 20px 0;
+}
+
+.footer .category ul li a:hover {
+    color: #FFDF20;
+}
+
+.footer .category ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+.footer .newsletter {
+    margin: 20px 0;
+    position: relative;
+}
+
+.footer .newsletter input {
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.footer .newsletter input:focus {
+    border: 2px solid #FFDF20;
+    outline: none;
+}
+
+.footer .newsletter button {
+    width: 99%;
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+    padding: 15px;
+    background-color: #FFDF20;
+    border: none;
+    box-shadow: 6px 6px 0 black;
+    transition: all 0.2s;
+}
+
+.footer .newsletter button:hover {
+    background-color: #FDC700;
+    transform: translate(4px, 4px);
+}
+
+.footer hr {
+    height: 4px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.footer .bottom {
+    margin: 30px 0;
+}
+
+.footer .bottom .copyrights span {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+.footer .bottom .links a {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+
+.footer .bottom .links a:hover {
+    color: #FFDF20;
+
+}
 
 
 
@@ -1186,6 +1329,46 @@ a {
         line-height: 20px;
     }
 
+    .footer .head .title h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .footer p {
+        font-size: 18px;
+        line-height: 29px;
+    }
+
+    .footer h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .footer .category ul li a {
+
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .footer .newsletter input {
+        font-size: 18px;
+    }
+
+    .footer .newsletter button {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .footer .bottom .copyrights span {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .footer .bottom .links a {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
 }
 
 
@@ -1260,6 +1443,16 @@ a {
         padding: 15px;
         width: 50px;
     }
+
+    .footer .head,
+    .footer .newsletter {
+        width: 38%;
+    }
+
+    .footer .category {
+        width: 10%;
+    }
+
 
 }
 
