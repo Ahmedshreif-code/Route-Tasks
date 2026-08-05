@@ -1,0 +1,1651 @@
+* {
+    margin: 0;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F9FAFB;
+}
+
+img {
+    width: 100%;
+}
+
+.clr {
+    clear: both;
+}
+
+.container {
+    margin: auto;
+    width: 85%;
+
+}
+
+
+i,
+h1,
+span,
+a {
+    display: inline-block;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+aside,
+aside .title,
+.main-nav ul li .link,
+.quick-action h3,
+.quick-action .btns span {
+    display: none;
+}
+
+aside {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: white;
+    overflow: auto;
+    transition: all 0.2s;
+}
+
+aside::-webkit-scrollbar {
+    width: 7px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: #8888883a;
+    border-radius: 10px;
+}
+
+aside .head {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+aside .head .logo {
+    color: white;
+    background-color: #3647EA;
+    padding: 10px 15px;
+    margin: 10px 0;
+    margin-left: 12px;
+    border-radius: 15px;
+}
+
+
+aside .head .title h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+aside .head .title p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    color: oklch(0.446 0.03 256.802);
+}
+
+aside .main-nav ul {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+aside .main-nav ul li {
+    list-style: none;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    color: gray;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+aside .main-nav ul li:not(.active):hover {
+    background-color: #F9FAFB;
+}
+
+
+aside .main-nav ul .active {
+    color: #3647EA;
+    background-color: #EFF6FF;
+}
+
+aside .main-nav ul li i {
+    margin-left: 10px;
+}
+
+aside .quick-action h3 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: oklch(0.373 0.034 259.733);
+    margin: 10px 0;
+}
+
+aside .btns button {
+    display: block;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    margin: 25px 0;
+    background-color: transparent;
+    text-align: start;
+    color: gray;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+aside .btns button i {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #DBE8FC;
+    color: #3647EA;
+    border-radius: 10px;
+
+}
+
+aside .btns button .text-green {
+    background-color: #D5F3E1;
+    color: #00A63E;
+}
+
+aside .btns button .text-purple {
+    background-color: #EFE0FC;
+    color: #9810FA;
+}
+
+aside .btns button .text-orange {
+    background-color: #FFF0E6;
+    color: #F54900;
+}
+
+aside .btns button:hover {
+    background-color: #F9FAFB;
+    scale: 1.02;
+}
+
+/*//////////////////////// main//////////////////////////////////////////////  */
+
+.main .container {
+    width: 95%;
+}
+
+.main .div,
+.main .parent .div {
+    width: 100%;
+    margin: 14px 0;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.342);
+    padding: 20px;
+}
+
+
+
+.main .header {
+    background-color: #FBFCFE;
+}
+
+.main .header .head {
+    display: flex;
+    align-items: center;
+}
+
+.main .header .head .logo {
+    color: white;
+    background-color: #3647EA;
+    padding: 10px 12px;
+    margin: 10px 0;
+    margin-left: 12px;
+    border-radius: 13px;
+}
+
+.main .header .head .title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.main .header .head .title p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.446 0.03 256.802);
+}
+
+.main .header .person {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .header .person .notifecation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .header .person .notifecation button {
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    margin: 0 5px;
+    border: 1px solid rgba(128, 128, 128, 0.308);
+    background-color: #F9FAFB;
+    color: #364153;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.main .header .person .notifecation button:hover {
+    background-color: #F3F4F6;
+}
+
+.main .header .person .notifecation button .not {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: -20%;
+    right: -10%;
+    background-color: red;
+    color: white;
+}
+
+
+.main .header .person .img span,
+.main .header .person .img p {
+    display: none;
+    transition: all 0.3s;
+
+}
+
+.main .header .person .img {
+    width: 60px;
+    background-color: white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.342);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 5px;
+    transition: all 0.2s;
+}
+
+.main .header .person .img:hover {
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.342);
+
+}
+
+.main .header .person img {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+.main .header .person .img span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+
+.main .header .person .img p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.main .header .status {
+    width: 100%;
+    text-align: center;
+    color: green;
+    background-color: #F0FDF4;
+    padding: 5px 0;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.main .header .status .online {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #2DD36F;
+}
+
+.main .number {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+}
+
+
+.main .numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.main .numbers p {
+    color: oklch(0.551 0.027 264.364);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.main .numbers h3 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.main .numbers .rate {
+    color: #00A63E;
+    display: flex;
+    gap: 4px;
+}
+
+.main .numbers .rate p {
+    color: #00A63E;
+}
+
+.main .numbers .down-r {
+    color: red;
+}
+
+.main .numbers .down-r p {
+    color: red;
+}
+
+.main .parent .activity h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    margin: 10px 0;
+    margin-bottom: 20px;
+}
+
+.main .parent .activity .card {
+    background-color: #EFF6FF;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-left: 5px solid #2B7FFF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.main .parent .activity .card-green {
+    background-color: #F0FDF4;
+    border-left: 5px solid #00C950;
+
+}
+
+.main .parent .activity .card .icon {
+    color: #2B7FFF;
+    background-color: #DBEAFE;
+    width: 35px;
+    height: 35px;
+    padding: 5px 0;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.main .parent .activity .card-green .icon {
+    color: #00C950;
+    background-color: #DBFCE7;
+
+}
+
+.main .parent .activity .card .content {
+    margin-left: auto;
+}
+
+.main .parent .activity .card .content h4 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.main .parent .activity .card .content p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: oklch(0.446 0.03 256.802);
+    margin-bottom: 5px;
+}
+
+.main .parent .activity .card .content span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.main .parent .activity .card .type span {
+    color: #155DFC;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.main .parent .activity .card-green .type span {
+    color: #00C950;
+}
+
+hr {
+    opacity: 0.2;
+    margin: 20px 0;
+}
+
+.main .parent .activity button {
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    color: #155DFC;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+
+.main .parent .table {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 16px;
+}
+
+.main .parent .table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main .parent .table thead th {
+    padding: 10px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.main .parent .table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+.main .parent .table .person {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: right;
+}
+
+.main .parent .table .person img,
+.main .parent .table .person .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.main .parent .table .person img {
+    object-fit: cover;
+}
+
+.main .parent .table .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+
+.orange {
+    background: #FFF3E7;
+    color: #F97316;
+}
+
+.blue {
+    background: #EAF2FF;
+    color: #2563EB;
+}
+
+.red {
+    background: #FEECEC;
+    color: #DC2626;
+}
+
+.green {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.cyan {
+    background: #E0F7FA;
+    color: #0891B2;
+}
+
+.indigo {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.emerald {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.purple {
+    background: #F3E8FF;
+    color: #9333EA;
+}
+
+
+.person-content h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.person-content p {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+
+
+.category {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.category.orange {
+    background: #FFF3E7;
+}
+
+.category.blue {
+    background: #EAF2FF;
+}
+
+.category.green {
+    background: #DCFCE7;
+}
+
+.category.red {
+    background: #FEECEC;
+}
+
+.category.cyan {
+    background: #E0F7FA;
+}
+
+.category.indigo {
+    background: #EEF2FF;
+}
+
+.category.emerald {
+    background: #D1FAE5;
+}
+
+.category.purple {
+    background: #F3E8FF;
+}
+
+
+
+.status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status.success {
+    background: #DCFCE7;
+    color: #15803D;
+}
+
+.status.pending {
+    background: #FEF3C7;
+    color: #B45309;
+}
+
+
+.money {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.income-money {
+    color: #16A34A;
+}
+
+.expense-money {
+    color: #111827;
+}
+
+.main .parent .table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.main .parent .table::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+.main .parent .table::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.main .parent .table-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.main .parent .table-head h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.main .parent .table-head span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: oklch(20.992% 0.03416 263.451 / 0.664);
+    transition: all 0.2s;
+}
+
+.main .parent .table-head span:hover {
+    color: black;
+}
+
+.main .parent .div3 .content {
+    text-align: center;
+}
+
+.main .parent .div3 .content h3 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.main .parent .div3 .content p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: oklch(0.551 0.027 264.364);
+    margin-bottom: 30px;
+}
+
+.main .parent .div3 .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+}
+
+.main .parent .div3 .cards .card {
+    width: 48%;
+    background-color: #F9FAFB;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.main .parent .div3 .cards .card i {
+    padding: 10px;
+    background-color: #DBEAFE;
+    color: #155DFC;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.main .parent .div3 .cards .card-yellow i {
+    background-color: #FEF9C2;
+    color: #D08700;
+}
+
+.main .parent .div3 .cards .card-green i {
+    background-color: #DBFCE7;
+    color: #00A63E;
+}
+
+.main .parent .div3 .cards .card-red i {
+    background-color: #FFE2E2;
+    color: #E7000B;
+}
+
+.main .parent .div3 .cards .card p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.main .parent .div3 .cards .card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.main .parent .div3 .cards .card span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.637 0.237 25.331);
+}
+
+.main .parent .div3 .cards .card-yellow span {
+    color: #FF6900;
+}
+
+.main .parent .div3 .cards .card-green span {
+    color: oklch(0.723 0.219 149.579);
+}
+
+.main .parent .div3 .cards .card-red span {
+    color: oklch(0.551 0.027 264.364);
+}
+
+.main .parent .div4 .total-card {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #EEF3FF;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.main .parent .div4 .total-card .num,
+.main .parent .div4 .total-card .progress .used {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.main .parent .div4 .precent {
+    width: 100%;
+    height: 8px;
+    background-color: #E5E7EB;
+    border-radius: 200px;
+    margin: 5px 0;
+    position: relative;
+}
+
+.main .parent .div4 .precent::after {
+    content: "";
+    width: 82.5%;
+    height: 100%;
+    position: absolute;
+    background-color: #4972FF;
+    border-radius: 200px;
+}
+
+.main .parent .div4 .total-card .price p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: oklch(0.546 0.245 262.881);
+}
+
+.main .parent .div4 .total-card .price h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: oklch(0.379 0.146 265.522);
+}
+
+.main .parent .div4 .total-card .remainder p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.main .parent .div4 .total-card .remainder h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: oklch(0.627 0.194 149.214);
+}
+
+.main .parent .div4 .total-card .progress p,
+.main .parent .div4 .total-card .progress span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.446 0.03 256.802);
+}
+
+.main .parent .div4 .card {
+    padding: 20px;
+    background-color: #f9fafb80;
+    border-radius: 20px;
+    margin: 20px 0;
+    transition: 0.2s;
+    border: 1px solid #e5e7ebcc;
+}
+
+.main .parent .div4 .card:hover {
+    background-color: #F5F6F8;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.322);
+    transform: translate(0, -3px);
+}
+
+
+
+.main .parent .div4 .card .card-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.main .parent .div4 .card i {
+    padding: 10px;
+    background-color: #FFEDD4;
+    color: #F54900;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.main .parent .div4 .card .content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.main .parent .div4 .card .content .title {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .parent .div4 .card .content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.main .parent .div4 .card .content p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.main .parent .div4 .card .price p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.main .parent .div4 .card .price span {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgb(22, 101, 52);
+    background-color: #DCFCE7;
+    padding: 0 8px;
+    border-radius: 50px;
+}
+
+.main .parent .div4 .card .precent::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: #FF6900;
+    border-radius: 200px;
+}
+
+.main .parent .div4 .card-red .precent::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #FB2C36;
+    border-radius: 200px;
+}
+
+.main .parent .div4 .card-red i,
+.main .parent .div4 .card-red .price span {
+    background-color: #FEE2E2;
+    color: #FB2C36;
+}
+
+.main .parent .div4 .card-pink .precent::after {
+    content: "";
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    background-color: #F6339A;
+    border-radius: 200px;
+}
+
+.main .parent .div4 .card-red i {
+    background-color: #FCE7F3;
+    color: #F6339A;
+}
+
+.main .parent .div4 .card-pink .price span {
+    background-color: #FEF3C7;
+    color: rgb(146, 64, 14);
+}
+
+.main .parent .div4 .card-green .precent::after {
+    content: "";
+    width: 86%;
+    height: 100%;
+    position: absolute;
+    background-color: #00C950;
+    border-radius: 200px;
+}
+
+.main .parent .div4 .card-green i,
+.main .parent .div4 .card-green .price span {
+    background-color: #DCFCE7;
+    color: #00C950;
+}
+
+.main .parent .div5 .marks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.main .parent .div5 .marks .mark {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.main .parent .div5 .marks .mark .m {
+    width: 13px;
+    height: 13px;
+    background-color: #10B981;
+    border-radius: 2px;
+}
+
+.main .parent .div5 .marks .mark .m-red {
+    background-color: #EF4444;
+}
+
+.main .parent .div5 .marks .mark p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    color: rgb(100, 116, 139);
+}
+
+.main .parent .div5 .weeks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .parent .div5 .weeks .week {
+    position: relative;
+}
+
+.main .parent .div5 .weeks p {
+    margin-top: 180px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    color: rgb(100, 116, 139);
+}
+
+.main .parent .div5 .weeks p::after {
+    content: " ";
+    background-color: #10B981;
+    width: 17px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.main .parent .div5 .weeks p::before {
+    content: " ";
+    background-color: #EF4444;
+    width: 17px;
+    height: 50px;
+    position: absolute;
+    bottom: 30px;
+    left: 11px;
+    border-radius: 3px 3px 0 0;
+}
+
+.main .parent .div6 .cards .card {
+    background-color: #f9fafb80;
+    border: 1px solid #e5e7ebcc;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.main .parent .div6 .cards .card .title {
+    margin-left: auto;
+}
+
+.main .parent .div6 .cards .card .title h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.main .parent .div6 .cards .card .title p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.main .parent .div6 .cards .card span {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.main .parent .div6 .cards .card i {
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.main .parent .div6 .cards .card .fa-university {
+    color: #155DFC;
+    background-color: #DBEAFE;
+}
+
+.main .parent .div6 .cards .card .fa-piggy-bank {
+    color: #00A63E;
+    background-color: #DBFCE7;
+}
+
+.main .parent .div6 .cards .card .fa-credit-card {
+    color: #9810FA;
+    background-color: #F3E8FF;
+}
+
+.main .parent .div6 .cards .card .red-span {
+    color: red;
+}
+
+
+
+.main .parent .div7 .cards .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #372AAC;
+    border-radius: 15px;
+    color: white;
+    margin: 40px 0;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.main .parent .div7 .cards .card-red .card-inner {
+    background-color: #C60036;
+
+}
+
+.main .parent .div7 .cards .card-blue .card-inner {
+    background-color: #193CB8;
+
+}
+
+.main .parent .div7 .cards .card-blue .certificate {
+    color: oklch(79.2% .209 151.711);
+    ;
+}
+
+.main .parent .div7 .cards .card:hover .card-inner {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    backface-visibility: hidden;
+}
+
+
+.main .parent .div7 .cards .card .card-front {
+    position: relative;
+    backface-visibility: hidden;
+}
+
+.main .parent .div7 .cards .card .card-front .badge {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+    padding: 8px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.main .parent .div7 .cards .card .card-front .title {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    margin-bottom: 50px;
+}
+
+.main .parent .div7 .cards .card .card-front .title .outerbox {
+    width: 40px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: rgba(231, 230, 230, 0.384);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .parent .div7 .cards .card .card-front .title .innerbox {
+    width: 20px;
+    height: 15px;
+    border-radius: 3px;
+    background-color: rgba(231, 230, 230, 0.384);
+}
+
+.main .parent .div7 .cards .card .card-front .title i {
+    font-size: 30px;
+}
+
+.main .parent .div7 .cards .card .card-front .number p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-left: auto;
+}
+
+.main .parent .div7 .cards .card .card-front .card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.main .parent .div7 .cards .card .card-front .card-footer .name h3,
+.main .parent .div7 .cards .card .card-front .card-footer .date h3 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(241, 239, 239, 0.733);
+}
+
+.main .parent .div7 .cards .card .card-front .card-footer .name p,
+.main .parent .div7 .cards .card .card-front .card-footer .date p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main .parent .div7 .cards .card .card-back {
+    background-color: #061024;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transform: rotateY(180deg);
+    overflow: hidden;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+}
+
+.main .parent .div7 .cards .card .card-back .black-grad {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background: linear-gradient(to right, black 50%, rgb(70, 69, 69));
+}
+
+.main .parent .div7 .cards .card .card-back p {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.48);
+    margin: 10px 0;
+}
+
+.main .parent .div7 .cards .card .card-back .white-bar {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.main .parent .div7 .cards .card .card-back .white-bar .num {
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(to right, white 20%, rgb(173, 173, 173));
+    text-align: end;
+    position: relative;
+}
+
+.main .parent .div7 .cards .card .card-back .white-bar .num p {
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    position: absolute;
+    top: -11px;
+    left: 0;
+}
+
+.main .parent .div7 .cards .card .card-back h3 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: oklch(0.872 0.01 258.338);
+    text-align: end;
+    margin: 5px 0;
+    margin-left: 30px;
+
+}
+
+.main .parent .div7 .cards .card .card-back span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: rgb(17, 24, 39);
+    background-color: white;
+    padding: 14px;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+    margin-right: auto;
+}
+
+
+
+/* ////////////////////media query///////////////////////// */
+/* sm */
+@media screen and (min-width: 640px) {
+    .main .header .person .img {
+        width: 150px;
+    }
+
+    .main .header .person .img span {
+        display: block;
+    }
+}
+
+/* md */
+@media screen and (min-width: 768px) {
+
+    aside {
+        display: block;
+        min-width: 50px;
+    }
+
+    aside .main-nav ul li {
+        margin: 5px 0;
+        padding: 15px;
+    }
+
+    aside .btns button {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .main {
+        margin: 20px 0;
+        margin-right: 90px;
+        transition: all 0.2s;
+    }
+
+    .main .div {
+        margin: 0px 0;
+    }
+
+
+
+    .main .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+
+    .main .header .status {
+        width: 10%;
+        order: 1;
+        margin-left: auto;
+        font-size: 14px;
+        line-height: 20px;
+
+
+    }
+
+    .main .header .head .logo {
+        font-size: 14px;
+
+    }
+
+    .main .header .head .title h2 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .main .header .head .title p {
+        font-size: 14px;
+        line-height: 20px;
+
+    }
+
+    .main .header .person .img p {
+        display: block;
+    }
+
+    .main .header .person img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+
+
+    .main .header .person {
+        justify-content: flex-end;
+        gap: 20px;
+        order: 2;
+    }
+
+    .main .header .person .notifecation button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .main .header .person .notifecation button .not {
+        width: 18px;
+        height: 18px;
+    }
+
+    .main .number {
+        flex-wrap: nowrap;
+        margin-bottom: 18px;
+        gap: 18px;
+
+    }
+
+    .main .numbers {
+        width: 32.3%;
+    }
+
+
+    .main .parent .activity h3 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .main .parent .table thead th,
+    .main .parent .table tbody td {
+        padding: 20px;
+    }
+
+    .category {
+        font-size: 12px;
+    }
+
+    .status {
+        font-size: 12px;
+    }
+
+    .money {
+        font-size: 14px;
+    }
+
+    .main .parent .table tbody td {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .person-content h4 {
+        font-size: 13px;
+
+    }
+
+    .person-content p {
+        font-size: 12px;
+    }
+
+
+
+
+
+    .person img,
+    .person .icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .main .parent .table-head h3 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .main .parent .table-head span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .main .parent thead th {
+        font-size: 14px;
+
+    }
+
+
+
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .div1 {
+        grid-row: span 1 / span 1;
+        grid-row-start: 1;
+
+    }
+
+    .div5 {
+        grid-row: span 1 / span 1;
+        grid-row-start: 1;
+
+    }
+
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-row-start: 2;
+    }
+
+    .div6 {
+        grid-row: span 1 / span 1;
+        grid-row-start: 4;
+    }
+
+    .div3 {
+        grid-row: span 1 / span 1;
+        grid-row-start: 4;
+    }
+
+    .div7 {
+        grid-row: span 3 / span 3;
+        grid-column-start: 2;
+    }
+
+    .div4 {
+        grid-row: span 3 / span 3;
+        grid-column-start: 1;
+    }
+
+
+
+
+
+
+
+
+}
+
+/* 1g */
+@media screen and (min-width: 1024px) {
+    .main .numbers h3 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+}
+
+/* x1 */
+@media screen and (min-width: 1280px) {
+    aside {
+        min-width: 250px;
+    }
+
+    aside .title,
+    .main-nav ul li .link,
+    .quick-action h3,
+    .quick-action .btns span {
+        display: inline-block;
+    }
+
+    aside .head .logo {
+        font-size: 24px;
+    }
+
+    .main {
+        margin-right: 260px;
+        transition: all 0.2s;
+
+    }
+
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        align-items: stretch;
+    }
+
+
+    .div1 {
+        grid-row: span 1 / span 1;
+    }
+
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+
+
+    }
+
+    .div3 {
+        grid-row: span 1 / span 1;
+
+    }
+
+    .div4 {
+        grid-row: span 2 / span 2;
+    }
+
+    .div5 {
+        grid-row: span 1 / span 1;
+    }
+
+    .div6 {
+        grid-row: span 1 / span 1;
+        grid-column-start: 2;
+    }
+
+    .div7 {
+        grid-row: span 2 / span 2;
+        grid-column-start: 3;
+        grid-row-start: 3;
+
+    }
+
+
+
+}
+
+/* xx1 */
+@media screen and (min-width: 1536px) {}
