@@ -374,6 +374,13 @@ a {
     border-radius: 10px;
     margin-bottom: 20px;
     background-color: #212529;
+    transition: all 0.5s;
+}
+
+#What-We-Do .icon-card:hover i {
+    background-color: #c6ff00;
+    color: #212529;
+
 }
 
 #What-We-Do .card h2 {
@@ -401,7 +408,7 @@ a {
 
 
 
-.logos {
+#What-We-Do .logos {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
@@ -418,18 +425,18 @@ a {
             transparent 100%);
 }
 
-.logos-slide-left {
+#What-We-Do .logos-slide-left {
     display: flex;
     animation: slide-left 15s linear infinite;
 }
 
-.logos-slide-right {
+#What-We-Do .logos-slide-right {
     display: flex;
 
     animation: slide-right 15s linear infinite;
 }
 
-.logos-slide img {
+#What-We-Do .logos-slide img {
     width: 90px;
     margin: 0 10px;
     border-radius: 20px;
@@ -455,7 +462,7 @@ a {
     }
 }
 
-.background {
+#What-We-Do .background {
     background:
         radial-gradient(ellipse at center,
             #c6ff0060 0%,
@@ -543,7 +550,7 @@ a {
         background-color: #212529;
     }
 
-    .background {
+    #What-We-Do .background {
         background:
             radial-gradient(ellipse at center,
                 #c6ff0060 0%,
