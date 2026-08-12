@@ -7,7 +7,7 @@
 
 h1,
 #home .title span,
-#OUR-GAMES .title h2 {
+.title h2 {
     font-family: "Days One", sans-serif;
 }
 
@@ -183,14 +183,14 @@ a {
     padding: 40px 0;
 }
 
-#OUR-GAMES .title span {
+.title span {
     font-size: 12px;
     font-weight: 700;
     line-height: 18px;
     position: relative;
 }
 
-#OUR-GAMES .title span::after {
+.title span::after {
     content: " ";
     width: 70px;
     height: 4px;
@@ -201,7 +201,7 @@ a {
     transform: translate(60%, -50%);
 }
 
-#OUR-GAMES .title span::before {
+.title span::before {
     content: " ";
     width: 70px;
     height: 4px;
@@ -212,7 +212,8 @@ a {
     transform: translate(-60%, -50%);
 }
 
-#OUR-GAMES .title h2 {
+.title h2,
+#What-We-Do .title h3 {
     font-size: 26px;
     font-weight: 700;
     line-height: 32px;
@@ -233,6 +234,7 @@ a {
 #OUR-GAMES .content {
     width: 100%;
     height: 100%;
+    background-image: none;
     transition: all 0.5s;
 }
 
@@ -317,12 +319,180 @@ a {
     width: 100%;
 }
 
+/* //////////////////////////////////////////////////// What-We-Do//////////////////////////////////////////////// */
+#What-We-Do .card {
+    background-color: #1A1A1A;
+    min-height: 310px;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+
+#What-We-Do .icon-card:hover {
+    border: 2px solid #c6ff00;
+}
+
+#What-We-Do .icon-card::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 0px;
+    height: 0px;
+    border-top: 30px solid #c6ff00;
+    border-right: 30px solid transparent;
+    transform: translate(-30px, -30px);
+    transition: all 0.5s;
+}
+
+#What-We-Do .icon-card:hover:after {
+    transform: translate(0px, 0px);
+}
+
+#What-We-Do .icon-card::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 0px;
+    height: 0px;
+    border-top: 30px solid transparent;
+    border-right: 30px solid #c6ff00;
+    transform: translate(30px, 30px);
+    transition: all 0.5s;
+}
+
+#What-We-Do .icon-card:hover::before {
+    transform: translate(-20px, -20px);
+}
+
+#What-We-Do .card i {
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #212529;
+}
+
+#What-We-Do .card h2 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+#What-We-Do .cards-we-do::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    bottom: -50px;
+    left: 20%;
+    position: absolute;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), #c6ff00, rgba(0, 0, 0, 0.5));
+    box-shadow: 1px 1px 10px #c6ff00;
+    margin: 20px 0;
+
+}
+
+#What-We-Do .slide {
+    margin: 70px 0;
+}
+
+
+
+.logos {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 15%,
+            black 85%,
+            transparent 100%);
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 15%,
+            black 85%,
+            transparent 100%);
+}
+
+.logos-slide-left {
+    display: flex;
+    animation: slide-left 15s linear infinite;
+}
+
+.logos-slide-right {
+    display: flex;
+
+    animation: slide-right 15s linear infinite;
+}
+
+.logos-slide img {
+    width: 90px;
+    margin: 0 10px;
+    border-radius: 20px;
+}
+
+@keyframes slide-left {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-50%);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translate(-50%);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+.background {
+    background:
+        radial-gradient(ellipse at center,
+            #c6ff0060 0%,
+            #c6ff0030 50%,
+            transparent 70%);
+    z-index: -1;
+    width: 100%;
+    height: 190%;
+    margin: 0 120px;
+    top: -17%;
+    right: -20%;
+}
+
+
+
+
+
 /* ////////////////////media query///////////////////////// */
 /* sm */
 @media screen and (min-width: 640px) {}
 
 /* md */
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .background {
+        background:
+            radial-gradient(ellipse at center,
+                #c6ff0060 0%,
+                #c6ff0030 50%,
+                transparent 70%);
+        z-index: -1;
+        width: 90%;
+        height: 190%;
+        margin: 0 120px;
+        top: -25%;
+        right: -10%;
+    }
+}
 
 /* 1g */
 @media screen and (min-width: 1024px) {
@@ -350,18 +520,46 @@ a {
         border: 1px solid #495057;
     }
 
-    #OUR-GAMES .title span {
+    .title span {
         font-size: 16px;
         line-height: 24px;
     }
 
-    #OUR-GAMES .title h2 {
+    .title h2,
+    #What-We-Do .title h3 {
         font-size: 48px;
         line-height: 48px;
     }
 
     #OUR-GAMES .games-btn {
         width: auto;
+    }
+
+    #What-We-Do .card i {
+        padding: 20px;
+        font-size: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-color: #212529;
+    }
+
+    .background {
+        background:
+            radial-gradient(ellipse at center,
+                #c6ff0060 0%,
+                #c6ff0030 50%,
+                transparent 70%);
+        z-index: -1;
+        width: 80%;
+        height: 190%;
+        margin: 0 120px;
+        top: -25%;
+        right: 0%;
+    }
+
+    #What-We-Do .card h2 {
+        font-size: 20px;
+        line-height: 25px;
     }
 
 
