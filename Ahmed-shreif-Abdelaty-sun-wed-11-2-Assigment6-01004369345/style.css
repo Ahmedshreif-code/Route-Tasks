@@ -6,7 +6,8 @@
 }
 
 h1,
-.title span {
+#home .title span,
+#OUR-GAMES .title h2 {
     font-family: "Days One", sans-serif;
 }
 
@@ -17,6 +18,10 @@ body {
 :root {
     --color-primary: #cbfe1c;
 
+}
+
+.text-primary {
+    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
 
 .btn-outline-primary {
@@ -80,7 +85,7 @@ a {
 
 .nav-link:hover,
 .navbar-brand:hover,
-.icon:hover {
+.navbar .icon:hover {
     color: var(--color-primary);
 }
 
@@ -146,9 +151,171 @@ a {
     border-radius: 20px;
 }
 
+#home .achive-card {
+    bottom: -10%;
+    left: -2%;
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 20px 30px;
+    border: 1px solid #495057;
+}
+
+#home .achive-card p {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+#home .achive-card i {
+    font-size: 20px;
+
+}
+
+#home .achive-card span {
+    font-size: 20px;
+    line-height: 28px;
+}
 
 
+/* ////////////////////////////////////////////////////OUR-GAMES//////////////////////////////////////////////// */
+#OUR-GAMES {
+    padding-top: 150px;
+    padding: 40px 0;
+}
 
+#OUR-GAMES .title span {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    position: relative;
+}
+
+#OUR-GAMES .title span::after {
+    content: " ";
+    width: 70px;
+    height: 4px;
+    background-image: linear-gradient(to right, var(--color-primary), #212529);
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translate(60%, -50%);
+}
+
+#OUR-GAMES .title span::before {
+    content: " ";
+    width: 70px;
+    height: 4px;
+    background-image: linear-gradient(to left, var(--color-primary), #212529);
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translate(-60%, -50%);
+}
+
+#OUR-GAMES .title h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+#OUR-GAMES .icons .icon {
+    background-color: #212529af;
+    text-align: center;
+    margin-top: -50px;
+    margin-left: 10px;
+    border-radius: 200px;
+    padding: 5px 0;
+    font-size: 12px;
+    transition: all 0.5s;
+
+}
+
+#OUR-GAMES .content {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+#OUR-GAMES .content h3 {
+    position: absolute;
+    top: 700px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    color: black;
+    transition: all 0.5s;
+}
+
+#OUR-GAMES .card,
+#OUR-GAMES img {
+    transition: all 0.5s;
+}
+
+#OUR-GAMES .card:hover {
+    border: 2px solid #cbfe1c;
+
+}
+
+#OUR-GAMES .card:hover .content {
+    background-image: linear-gradient(to top, #c9fe1c86, transparent);
+
+}
+
+#OUR-GAMES .card:hover img {
+    transform: scale(1.1);
+}
+
+#OUR-GAMES .card:hover .icon {
+    transform: translate(0, 80px);
+}
+
+#OUR-GAMES .card:hover h3 {
+    top: 85%;
+}
+
+#OUR-GAMES .custom-control {
+    width: auto;
+    top: auto;
+    bottom: -80px;
+}
+
+#OUR-GAMES .carousel-control-prev {
+    left: 42%;
+}
+
+#OUR-GAMES .carousel-control-next {
+    right: 42%;
+}
+
+#OUR-GAMES .circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #394357;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    transition: .3s;
+}
+
+#OUR-GAMES .circle i {
+    font-size: 24px;
+    color: #9BA6AB;
+}
+
+#OUR-GAMES .circle:hover {
+    border-color: #c6ff00;
+}
+
+#OUR-GAMES .circle:hover i {
+    color: #c6ff00;
+}
+
+#OUR-GAMES .games-btn {
+    width: 100%;
+}
 
 /* ////////////////////media query///////////////////////// */
 /* sm */
@@ -172,6 +339,29 @@ a {
     #home p {
         font-size: 16px;
         line-height: 26px;
+    }
+
+    #home .achive-card {
+        bottom: -10%;
+        left: -10%;
+        background-color: #212529;
+        border-radius: 10px;
+        padding: 20px 30px;
+        border: 1px solid #495057;
+    }
+
+    #OUR-GAMES .title span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    #OUR-GAMES .title h2 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    #OUR-GAMES .games-btn {
+        width: auto;
     }
 
 
