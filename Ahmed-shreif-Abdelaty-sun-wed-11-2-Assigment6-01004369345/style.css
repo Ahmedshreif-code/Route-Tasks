@@ -128,10 +128,11 @@ a {
     padding-top: 150px;
 }
 
-#home h1 {
+#home h2 {
     font-size: 32px;
     font-weight: 700;
     line-height: 39px;
+    margin-bottom: 0;
 }
 
 #home p {
@@ -508,7 +509,7 @@ a {
         padding: 150px 0;
     }
 
-    #home h1 {
+    #home h2 {
         font-size: 60px;
         line-height: 75px;
     }
