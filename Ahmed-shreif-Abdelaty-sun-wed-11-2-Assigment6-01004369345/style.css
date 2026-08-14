@@ -8,12 +8,10 @@
 h1,
 #home .title span,
 .title h2,
-#Our-Team .card h3 {
+#Our-Team .card h3,
+#Contact-Us .card h2,
+#Contact-Us form h3 {
     font-family: "Days One", sans-serif;
-}
-
-body {
-    height: 20000px;
 }
 
 :root {
@@ -478,7 +476,8 @@ a {
 }
 
 /* //////////////////////////////////////////////////// Our-Team//////////////////////////////////////////////// */
-#Our-Team .title p {
+#Our-Team .title p,
+#Contact-Us .title p {
     font-size: 18px;
     line-height: 25px;
     font-weight: 400;
@@ -530,9 +529,110 @@ a {
     height: 0;
 }
 
+/* ////////////////////////////////////////////////////Contact-Us//////////////////////////////////////////////// */
+#Contact-Us .card,
+#Contact-Us form {
+    background-color: #1E2939;
+    border: none;
+}
 
+#Contact-Us .card i {
+    background-color: #c6ff00;
+    font-size: x-large;
+    transition: all 0.5s;
+    color: #CBFE1C;
+}
 
+#Contact-Us .card h2 {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+}
 
+#Contact-Us .card p {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+#Contact-Us .card-grad {
+    background: linear-gradient(to right, var(--color-primary), rgba(6, 255, 110, 0.536));
+}
+
+#Contact-Us .card-grad i:hover {
+    opacity: 0.7;
+}
+
+#Contact-Us .card-grad h2 {
+    font-size: 23px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+#Contact-Us .card-grad p {
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+#Contact-Us form h3 {
+    font-size: 23px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+#Contact-Us form label {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+}
+
+#Contact-Us form input,
+#Contact-Us form select,
+#Contact-Us form textarea {
+    padding: 15px;
+    background-color: #364153;
+}
+
+#Contact-Us form input:focus,
+#Contact-Us form select:focus,
+#Contact-Us form textarea:focus {
+    box-shadow: 1px 1px 2px #c6ff00;
+    border: 2px solid #c6ff00;
+
+}
+
+#Contact-Us form .form-check-input {
+    padding: 10px;
+    background-color: white;
+}
+
+#Contact-Us form .form-check-input:checked {
+    background-color: blue;
+}
+
+#Contact-Us form .form-check-input:focus {
+    border: 2px solid #c6ff00;
+
+}
+
+#Contact-Us form button {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+#Contact-Us form h4 {
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+#Contact-Us form p {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
 
 /* ////////////////////media query///////////////////////// */
 /* sm */
@@ -615,7 +715,8 @@ a {
         line-height: 25px;
     }
 
-    #Our-Team .title p {
+    #Our-Team .title p,
+    #Contact-Us .title p {
         font-size: 20px;
         line-height: 28px;
     }
@@ -640,6 +741,46 @@ a {
     #Our-Team .card span {
         font-size: 18px;
         line-height: 28px;
+    }
+
+    #Contact-Us .card h2 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    #Contact-Us .card p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    #Contact-Us .card-grad h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #Contact-Us form h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #Contact-Us form label {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    #Contact-Us form button {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    #Contact-Us form h4 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #Contact-Us form p {
+        font-size: 14px;
+        line-height: 20px;
     }
 
 
