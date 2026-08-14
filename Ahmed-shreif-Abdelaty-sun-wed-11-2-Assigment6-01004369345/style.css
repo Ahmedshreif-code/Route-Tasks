@@ -7,7 +7,8 @@
 
 h1,
 #home .title span,
-.title h2 {
+.title h2,
+#Our-Team .card h3 {
     font-family: "Days One", sans-serif;
 }
 
@@ -472,9 +473,61 @@ a {
     z-index: -1;
     width: 100%;
     height: 190%;
-    margin: 0 120px;
     top: -17%;
-    right: -20%;
+    right: -0%;
+}
+
+/* //////////////////////////////////////////////////// Our-Team//////////////////////////////////////////////// */
+#Our-Team .title p {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+
+
+#Our-Team .card .side-title {
+    transform: rotate(90deg);
+}
+
+#Our-Team .card h3 {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+#Our-Team .card h4 {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+#Our-Team .card p {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 400;
+}
+
+#Our-Team .card span {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+#Our-Team .card::after {
+    content: "";
+    position: absolute;
+    backdrop-filter: grayscale(100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+
+}
+
+#Our-Team .card:hover:after {
+    height: 0;
 }
 
 
@@ -496,10 +549,10 @@ a {
         z-index: -1;
         width: 90%;
         height: 190%;
-        margin: 0 120px;
         top: -25%;
         right: -10%;
     }
+
 }
 
 /* 1g */
@@ -552,15 +605,7 @@ a {
     }
 
     #What-We-Do .background {
-        background:
-            radial-gradient(ellipse at center,
-                #c6ff0060 0%,
-                #c6ff0030 50%,
-                transparent 70%);
-        z-index: -1;
         width: 80%;
-        height: 190%;
-        margin: 0 120px;
         top: -25%;
         right: 0%;
     }
@@ -570,6 +615,32 @@ a {
         line-height: 25px;
     }
 
+    #Our-Team .title p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+
+
+    #Our-Team .card h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    #Our-Team .card h4 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    #Our-Team .card p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    #Our-Team .card span {
+        font-size: 18px;
+        line-height: 28px;
+    }
 
 
 }
