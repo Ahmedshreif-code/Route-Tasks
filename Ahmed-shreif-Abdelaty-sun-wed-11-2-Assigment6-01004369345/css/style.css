@@ -765,6 +765,10 @@ a {
         font-size: 24px;
     }
 
+    #Contact-Us .card-grad i {
+        font-size: 20px;
+    }
+
     #Contact-Us form h3 {
         font-size: 24px;
         line-height: 32px;
