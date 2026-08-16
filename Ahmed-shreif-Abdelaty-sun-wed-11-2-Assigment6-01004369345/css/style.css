@@ -530,6 +530,10 @@ a {
 }
 
 /* ////////////////////////////////////////////////////Contact-Us//////////////////////////////////////////////// */
+#Contact-Us {
+    background-color: #0E141F;
+}
+
 #Contact-Us .card,
 #Contact-Us form {
     background-color: #1E2939;
@@ -538,7 +542,6 @@ a {
 
 #Contact-Us .card i {
     background-color: #c6ff00;
-    font-size: x-large;
     transition: all 0.5s;
     color: #CBFE1C;
 }
@@ -756,6 +759,10 @@ a {
     #Contact-Us .card-grad h2 {
         font-size: 24px;
         line-height: 32px;
+    }
+
+    #Contact-Us .card i {
+        font-size: 24px;
     }
 
     #Contact-Us form h3 {
