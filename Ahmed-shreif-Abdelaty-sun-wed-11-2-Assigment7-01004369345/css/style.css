@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #7C3AED;
+}
+
+::selection {
+    background-color: var(--main-color);
+    color: white;
+}
+
+i,
+h1,
+span,
+a {
+    display: inline-block;
+}
+
+.primary-color {
+    color: var(--main-color);
+}
+
+.primary-color-bg {
+    background-color: var(--main-color);
+}
+
+/*////////////////////////////////////////////////// header//////////////////////////////////////////////////////////////////////// */
+.navbar-nav {
+    --bs-nav-link-hover-color: var(--main-color);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--bs-nav-link-color)
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #EDE9FE;
+    color: var(--bs-nav-link-hover-color);
+}
+
+.navbar-nav .nav-link.show {
+    color: var(--bs-nav-link-color);
+}
+
+.navbar-nav .dropdown-toggle::after {
+    content: "\f107";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    border: 0;
+    vertical-align: middle;
+    transition: all 0.5s;
+}
+
+.navbar-nav .dropdown-toggle.show::after {
+    transform: rotate(180deg);
+
+}
+
+.x-icon {
+    display: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
+
+.navbar-toggler:not(.collapsed) .bars-icon {
+    display: none;
+}
+
+.navbar-toggler:not(.collapsed) .x-icon {
+    display: inline-block;
+}
+
+
+#Nav .dropdown {
+    position: static;
+
+}
+
+#Nav .dropdown-menu {
+    width: 100%;
+    height: 80vh;
+    left: 30%;
+    top: 100%;
+    overflow: auto;
+}
+
+header .dropdown-menu h2 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+header .dropdown-menu h4 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+header .dropdown-menu p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+header .dropdown-menu .img {
+    height: 70px;
+    width: 100px;
+
+}
+
+header .dropdown-menu .prop {
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+header .dropdown-menu .prop:hover {
+    background-color: #F9FAFB;
+}
+
+header .dropdown-menu .Property-Types ul li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+header .dropdown-menu .Property-Types ul li:hover span {
+    color: var(--main-color);
+}
+
+header .dropdown-menu .Popular-Locations .img {
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+header .dropdown-menu .Popular-Locations .img-1 {
+    background-image: linear-gradient(rgb(89, 22, 139, 0.6)), url(../images/photo-1522083165195-3424ed129620.jpg);
+}
+
+header .dropdown-menu .Popular-Locations .img-1:hover {
+    background-image: linear-gradient(rgb(89, 22, 139, 0.8)), url(../images/photo-1522083165195-3424ed129620.jpg);
+}
+
+
+header .dropdown-menu .Popular-Locations .img-2 {
+    background-image: linear-gradient(rgb(89, 22, 139, 0.6)), url(../images/photo-1501594907352-04cda38ebc29.jpg);
+}
+
+header .dropdown-menu .Popular-Locations .img-2:hover {
+    background-image: linear-gradient(rgb(89, 22, 139, 0.8)), url(../images/photo-1501594907352-04cda38ebc29.jpg);
+}
+
+header .dropdown-menu .Popular-Locations .img-3 {
+    background-image: linear-gradient(rgb(89, 22, 139, 0.6)), url(../images/photo-1537996194471-e657df975ab4.jpg);
+}
+
+header .dropdown-menu .Popular-Locations .img-3:hover {
+    background-image: linear-gradient(rgb(89, 22, 139, 0.8)), url(../images/photo-1537996194471-e657df975ab4.jpg);
+}
+
+header .dropdown-menu .Popular-Locations h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+header .dropdown-menu .Popular-Locations p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgb(221, 214, 255);
+}
+
+header .dropdown-menu .Resources .card .title i {
+    background-color: #EDE9FE;
+    font-size: 1.3rem;
+}
+
+header .dropdown-menu .Resources .card-green .title i {
+    background-color: #DBFCE7;
+    color: #00A63E;
+
+}
+
+header .dropdown-menu .Resources .card .title h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    transition: all 0.5s;
+
+}
+
+header .dropdown-menu .Resources .card .card-body span {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgb(74, 85, 101);
+
+}
+
+header .dropdown-menu .Resources .card .footer {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+header .dropdown-menu .Resources .card-green .footer {
+    color: #00A63E;
+}
+
+header .dropdown-menu .Resources .card .footer i {
+    transition: all 0.5s;
+}
+
+header .dropdown-menu .Resources .card::after {
+    display: none;
+
+}
+
+
+header .dropdown-menu .Resources .card {
+    border: 1px solid #EDE9FE;
+    transition: all 0.5s;
+
+}
+
+header .dropdown-menu .Resources .card:hover {
+    border: 1px solid rgb(124, 58, 237, 0.4);
+}
+
+header .dropdown-menu .Resources .card-green {
+    border: 1px solid rgb(219, 252, 231);
+}
+
+header .dropdown-menu .Resources .card-green:hover {
+    border: 1px solid rgb(0, 166, 62, 0.4);
+}
+
+header .dropdown-menu .Resources .card:hover h4 {
+    color: var(--main-color);
+}
+
+header .dropdown-menu .Resources .card-green:hover h4 {
+    color: #00A63E;
+}
+
+header .dropdown-menu .Resources .card:hover .footer i {
+    transform: translateX(5px);
+}
+
+
+header .dropdown-menu .Resources .card-green::after {
+    display: none;
+
+}
+
+/*/////////////////////////////////////////////////////// home////////////////////////////////////////////////////////////////////// */
+#home {
+    background-image: linear-gradient(to right, #4d179acc, #59168bcc), url(../images/4a713135fa-60a8ac99fc66b07ce395.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+
+
+#home h2 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+#home p {
+    font-size: 20px;
+    line-height: 33px;
+    font-weight: 400;
+    width: 100%;
+}
+
+#home .the-form {
+    width: 100%;
+}
+
+
+#home .location-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    z-index: 2;
+}
+
+#home .form-control:focus,
+#home .form-select:focus {
+    box-shadow: 0 0 0 0.1rem var(--main-color);
+}
+
+#home .btn:hover {
+    background-color: #5a26b4;
+}
+
+#home .btn:first-child:active {
+    background-color: #5a26b4;
+}
+
+#home .status h4 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+#home .status p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(221, 214, 255);
+}
+
+/* ////////////////////media query///////////////////////// */
+/* sm */
+@media screen and (min-width: 640px) {}
+
+/* md */
+@media screen and (min-width: 768px) {}
+
+/* 1g */
+@media screen and (min-width: 1024px) {
+
+    #Nav .dropdown-menu {
+        width: 80%;
+        height: auto;
+        left: 10%;
+        top: 93%;
+
+    }
+
+    header .dropdown-menu h2 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    header .dropdown-menu h4 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    header .dropdown-menu p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    header .dropdown-menu .Property-Types ul li {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    header .dropdown-menu .Popular-Locations h4 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    header .dropdown-menu .Popular-Locations p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    header .dropdown-menu .Resources .card .title h4 {
+        font-size: 18px;
+        line-height: 28px;
+
+    }
+
+    header .dropdown-menu .Resources .card .card-body span {
+        font-size: 16px;
+        line-height: 24px;
+
+
+    }
+
+    header .dropdown-menu .Resources .card .footer {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    header .dropdown-menu .Resources .card::after {
+        content: "";
+        position: absolute;
+        background-color: rgb(221, 214, 255);
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        top: -50px;
+        right: -50px;
+
+    }
+
+    header .dropdown-menu .Resources .card-green::after {
+        content: "";
+        position: absolute;
+        background-color: #DBFCE7;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        top: -50px;
+        right: -50px;
+
+    }
+
+    .navbar-nav .nav-link {
+        position: relative;
+    }
+
+    .navbar-nav .nav-link.active:not(.dropdown-toggle) {
+        color: var(--main-color);
+    }
+
+    .navbar-nav .dropdown-toggle::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #7C3AED;
+        bottom: 5px;
+        left: 5px;
+        transition: width 0.5s;
+    }
+
+    .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #7C3AED;
+        bottom: 5px;
+        left: 5px;
+        transition: width 0.5s;
+    }
+
+    .navbar-nav .nav-link:not(.dropdown-toggle).active::after {
+        width: 80%;
+    }
+
+    .navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
+        width: 80%;
+    }
+
+    .navbar-nav .dropdown-toggle:hover::before {
+        width: 80%;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: transparent;
+        color: var(--bs-nav-link-hover-color);
+    }
+
+    .navbar-nav .nav-link.show {
+        color: var(--bs-nav-link-hover-color);
+    }
+
+    .navbar-nav .nav-link.show::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background-color: #7C3AED;
+        bottom: 5px;
+        left: 5px;
+        transition: width 0.5s;
+    }
+
+    #home h2 {
+        font-size: 60px;
+        line-height: 75px;
+    }
+
+    #home p {
+        font-size: 20px;
+        line-height: 33px;
+        width: 60%;
+    }
+
+    #home .the-form {
+        width: 75%;
+    }
+
+
+
+}
+
+/* x1 */
+@media screen and (min-width: 1280px) {}
+
+/* xx1 */
+@media screen and (min-width: 1536px) {}
