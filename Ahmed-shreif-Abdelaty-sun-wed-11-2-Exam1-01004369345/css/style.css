@@ -691,6 +691,11 @@ header .dropdown-menu .Resources .card-green::after {
 
 }
 
+#Testimonials .card {
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.322);
+
+}
+
 #Testimonials .card .head-card {
     font-size: 16px;
     line-height: 24px;
