@@ -27,6 +27,14 @@ a {
     color: var(--main-color);
 }
 
+.orange-color {
+    color: #E17100;
+}
+
+.orange-color-bg {
+    background-color: #E17100;
+}
+
 .primary-color-bg {
     background-color: var(--main-color);
 }
@@ -225,6 +233,7 @@ header .dropdown-menu .Resources .card .footer i {
     transition: all 0.5s;
 }
 
+
 header .dropdown-menu .Resources .card::after {
     display: none;
 
@@ -266,6 +275,7 @@ header .dropdown-menu .Resources .card-green::after {
     display: none;
 
 }
+
 
 /*/////////////////////////////////////////////////////// home////////////////////////////////////////////////////////////////////// */
 #home {
@@ -473,9 +483,129 @@ header .dropdown-menu .Resources .card-green::after {
 
 }
 
+/*//////////////////////////////// services///////////////////////////////////////// */
+#Services .nav-tabs .nav-link.active {
+    --bs-nav-tabs-link-active-color: var(--bs-btn-active-bg);
+    --bs-nav-tabs-link-active-bg: #F5F3FF;
+    color: var(--bs-nav-tabs-link-active-color);
+    background-color: var(--bs-nav-tabs-link-active-bg);
+    border: none;
+    border-bottom: 3px solid var(--main-color);
+    border-radius: 0;
+    padding: 10px 20px;
+
+}
+
+#Services .nav-tabs .nav-item {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    padding: 10px 20px;
+    color: #4A5565;
+    transition: all 0.1s;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+
+}
 
 
+#Services .nav-tabs .nav-link:not(.active):hover {
+    isolation: isolate;
+    border: none;
+    border-bottom: 3px solid rgba(124, 58, 237, 0.719);
+    color: var(--main-color);
+}
 
+#Services .tab-content .img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.322);
+
+
+}
+
+#Services .tab-content .img-content {
+    position: absolute;
+    bottom: -50px;
+    left: -30px;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.322);
+}
+
+#Services .tab-content #selling .img-content,
+#Services .tab-content #Investing .img-content {
+    position: absolute;
+    bottom: -50px;
+    right: -30px;
+    left: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+#Services .tab-content .img-content h3 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#Services .tab-content .img-content p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: oklch(0.446 0.03 256.802);
+}
+
+
+#Services .tab-content .icon {
+    background-color: #DDD6FF;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+#Services .tab-content #selling .icon {
+    background-color: #DBFCE7;
+
+}
+
+#Services .tab-content #Investing .icon {
+    background-color: #FEF9C2;
+
+}
+
+#Services .tab-content #Commercial .icon {
+    background-color: #E0E7FF;
+
+}
+
+#Services .tab-content .title h3 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+#Services .tab-content .title p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: oklch(0.446 0.03 256.802);
+}
+
+#Services .tab-content .head h3 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    margin: 2px 0;
+}
+
+#Services .tab-content .head span {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: oklch(0.446 0.03 256.802);
+}
 
 
 /* ////////////////////media query///////////////////////// */
@@ -553,6 +683,7 @@ header .dropdown-menu .Resources .card-green::after {
         border-radius: 100%;
         top: -50px;
         right: -50px;
+        display: block;
 
     }
 
@@ -565,6 +696,7 @@ header .dropdown-menu .Resources .card-green::after {
         border-radius: 100%;
         top: -50px;
         right: -50px;
+
 
     }
 
@@ -659,6 +791,9 @@ header .dropdown-menu .Resources .card-green::after {
         line-height: 36px;
         font-weight: 700;
     }
+
+
+
 
 
 
