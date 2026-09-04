@@ -607,6 +607,129 @@ header .dropdown-menu .Resources .card-green::after {
     color: oklch(0.446 0.03 256.802);
 }
 
+/*///////////////////////// Testimonials/////////////////////////////////////////////// */
+#Testimonials .title .pill p {
+    border: 1px solid var(--main-color);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: #FAF5FF;
+}
+
+#Testimonials .title .pill::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background-image: linear-gradient(to right, oklch(76.9% .188 70.08), oklch(74% .238 322.16), transparent);
+    top: 30%;
+    right: -30%;
+    transform: translate(50%, -30%);
+}
+
+#Testimonials .title .pill::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background-image: linear-gradient(to left, oklch(76.9% .188 70.08), transparent);
+    top: 30%;
+    left: -30%;
+    transform: translate(-50%, -30%);
+}
+
+#Testimonials .title h2 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 900;
+    background-image: none;
+    background-clip: none;
+    -webkit-text-fill-color: white;
+}
+
+#Testimonials .title span {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #DDCDFC;
+    width: 100%;
+}
+
+#Testimonials .carousel {
+    width: 100%;
+}
+
+#Testimonials .carousel-control-prev {
+    left: -60px;
+}
+
+#Testimonials .carousel-control-next {
+    right: -60px;
+
+}
+
+#Testimonials .carousel-control-next,
+#Testimonials .carousel-control-prev {
+    top: 50%;
+    bottom: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #9ca3af;
+}
+
+#Testimonials .carousel-indicators {
+
+    bottom: -60px;
+
+}
+
+#Testimonials .carousel-indicators [data-bs-target] {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+
+}
+
+#Testimonials .card .head-card {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: oklch(0.446 0.03 256.802);
+}
+
+#Testimonials .card .card-body span {
+    font-size: 20px;
+    line-height: 33px;
+    font-weight: 400;
+    color: oklch(0.373 0.034 259.733);
+}
+
+#Testimonials .footer-card .img {
+    width: 70px;
+}
+
+#Testimonials .footer-card .details h2 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+#Testimonials .footer-card .details p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: oklch(0.446 0.03 256.802);
+}
+
+#Testimonials .footer-card .details span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: oklch(0.551 0.027 264.364);
+}
+
+
 
 /* ////////////////////media query///////////////////////// */
 /* sm */
@@ -790,6 +913,19 @@ header .dropdown-menu .Resources .card-green::after {
         font-size: 30px;
         line-height: 36px;
         font-weight: 700;
+    }
+
+    #Testimonials .carousel {
+        width: 75%;
+    }
+
+    #Testimonials .title h2 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    #Testimonials .title span {
+        width: 50%;
     }
 
 
