@@ -964,6 +964,11 @@ header .dropdown-menu .Resources .card-green::after {
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
+    transition: all 0.3s;
+}
+
+#Contact .Send-us-message form button:hover {
+    transform: translateY(-5px);
 }
 
 #Contact .Send-us-message .checkbox-div {
@@ -1014,11 +1019,13 @@ footer .d-flex p {
 
 footer .icons a i {
     background-color: #692E98;
+    transition: all 0.3s;
 
 }
 
 footer .icons a i:hover {
     background-color: #7F22FE;
+    transform: scale(1.1);
 }
 
 footer span {
