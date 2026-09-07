@@ -1,0 +1,171 @@
+:root {
+  --maincolor: #ff206e;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35)), url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#home  .navbar-nav .nav-link.active {
+  color: var(--maincolor);
+}
+#home  .navbar-brand,
+#home  .nav-link {
+  color: #fff;
+}
+#home  .nav-link:hover,
+#home  .navbar-brand:hover {
+  color: var(--maincolor);
+}
+#home  .nav-link {
+  position: relative;
+}
+#home  .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--maincolor);
+  transition: all 1s;
+}
+
+#home  .nav-link:hover::after,
+#home  .navbar-nav .nav-link.active::after {
+  width: 70%;
+}
+#home .content a {
+  color: var(--maincolor);
+}
+#home .icon i {
+  transition: border-color 1s;
+}
+#home .icon i:hover {
+  --bs-border-color: var(--maincolor);
+}
+
+.caption h2 {
+  font-size: 40px;
+  color: #ccc;
+  letter-spacing: 5;
+}
+.client-item h6 {
+  position: relative;
+
+  padding: 10px 0px;
+}
+.client-item h6::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5%;
+  height: 1px;
+  background-color: var(--maincolor);
+  transition: width 1s;
+}
+
+.client-item:hover h6::after {
+  width: 8%;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  background-color: var(--maincolor);
+  border-radius: 50%;
+}
+
+#clients .carousel-control-next,
+#clients .carousel-control-prev {
+  width: 45px;
+  height: 45px;
+  background: 0 0 var(--maincolor);
+  border-radius: 50%;
+  top: auto;
+  bottom: 0;
+}
+
+#clients .carousel-control-next {
+  right: auto;
+  left: 50px;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  bottom: 120%;
+  left: 15px;
+  right: 15px;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s;
+}
+.item:hover .layer {
+  bottom: 15px;
+  opacity: 1;
+}
+.item img{
+  transition: filter 1s;
+}
+.item:hover img {
+  filter: blur(15px);
+}
+
+#nav-tab .nav-link{
+  color: #000;
+}
+
+#nav-tab.nav-tabs .nav-link.active{
+  color: var(--maincolor);
+}
+
+
+.team-layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+}
+
+.team-item::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter:grayscale(99%);
+
+  transition: all 1s;
+}
+.team-item:hover::after{
+  bottom: 100%;
+}
+.team-item h6{
+  transition: color 1s;
+}
+.team-item:hover h6{
+  color: gold;
+}
+.test{
+position: relative;
+width: 33%;
+}
+.test img{
+  width: 100%;
+}
