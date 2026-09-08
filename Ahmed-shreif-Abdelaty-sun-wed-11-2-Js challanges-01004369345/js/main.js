@@ -157,6 +157,13 @@ Get two numbers from user, swap their values without using a third variable, dis
 
 // console.log("After Swapping: num1=" + num1 + ", num2=" + num2)
 
+//                            sol-2
+
+// var a = Number(prompt("Enter num1"));
+// var b = Number(prompt("Enter num2"));
+// [a, b] = [b, a]
+// console.log("After Swapping: num1=" + a + ", num2=" + b)
+
 
 
 /*
@@ -347,4 +354,7 @@ The Right Triangular Star Pattern involves printing a series of stars in a trian
 //     console.log(line);
 
 // }
+
+
+
 
