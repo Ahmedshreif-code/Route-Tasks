@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+
+:root {
+    --main-color: #F54900;
+}
+
+.bg-color {
+    background-color: #fffbea;
+}
+
+.main-color {
+    color: #F54900;
+}
+
+.main-color-bg {
+    background-color: #F54900;
+}
+
+
+i,
+h1,
+span,
+a {
+    display: inline-block;
+}
+
+
+
+/*////////////////////////////////////////////////// header//////////////////////////////////////////////////////////////////////// */
+header nav img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--main-color);
+}
+
+.nav-link:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.nav-link:hover a {
+    color: var(--main-color);
+}
+
+header nav .title h1 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+header nav .title p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: oklch(0.551 0.027 264.364);
+}
+
+/* ////////////////////////card///////////////////////////////////////////// */
+
+section .card .row-card {
+    min-height: 750px;
+}
+
+section .card img {
+    height: 100%;
+    max-height: 750px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+section .card .rate {
+    left: 20px;
+    top: 20px;
+}
+
+section .card .rate p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+section .card .rate span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: oklch(0.551 0.027 264.364);
+}
+
+section .card .info {
+    left: 20px;
+    bottom: 10%;
+    width: calc(100% - 40px);
+}
+
+section .card .info i {
+    font-size: 20px;
+}
+
+section .card .info span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: oklch(0.551 0.027 264.364);
+}
+
+section .card .info p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+section .card .card-body {
+    height: auto;
+}
+
+.card-body::-webkit-scrollbar,
+.card .tab-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-body::-webkit-scrollbar-track,
+.card .tab-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-body::-webkit-scrollbar-thumb,
+.card .tab-content::-webkit-scrollbar-thumb {
+    background-color: #FFDBD2;
+    border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover,
+.card .tab-content::-webkit-scrollbar-thumb:hover {
+    background-color: #B46653;
+}
+
+
+section .card .card-body .title .head .pills {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+section .card .card-body .title .head h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+section .card .card-body .title .head span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: oklch(0.446 0.03 256.802);
+}
+
+section .card .card-body .title .icons i {
+    background-color: #FFEDD4;
+    cursor: pointer
+}
+
+section .card .card-body .title .icons i:hover {
+    background-color: #FFD6A7;
+}
+
+section .card .card-body .warnning i {
+    font-size: 20px;
+}
+
+section .card .card-body .warnning p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: oklch(0.444 0.177 26.899);
+}
+
+section .card .card-body .warnning span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.card .nav-tabs .nav-link.active {
+    color: var(--main-color);
+    border: none;
+    border-bottom: 2px solid black;
+    border-color: var(--main-color);
+}
+
+
+.card .nav-link {
+    color: gray;
+    border: none;
+    transition: all 0;
+}
+
+.card .nav-link:not(.nav-link.active):hover {
+    color: black;
+    cursor: pointer;
+    border: none;
+
+}
+
+.card .nav-link:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0;
+}
+
+.card .tab-content {
+    height: 364px;
+    overflow: auto;
+}
+
+.card #Ingredients .grad p,
+.card #Instructions .instruction p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: oklch(0.373 0.034 259.733);
+}
+
+.card .nav-item {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+
+.card #Nutrition .icon {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.card #Nutrition .data {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.card #Chefs-Tips .tip {
+    border-left: 6px solid #FFB900;
+}
+
+.card #Chefs-Tips .tip span {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.card .try {
+    background-image: linear-gradient(to right, oklch(70.5% .213 47.604), oklch(63.7% .237 25.331));
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.card .try:hover {
+    transform: scale(1.1);
+}
+
+
+/* ////////////////////media query///////////////////////// */
+/* sm */
+@media screen and (min-width: 640px) {}
+
+/* md */
+@media screen and (min-width: 768px) {}
+
+/* 1g */
+@media screen and (min-width: 1024px) {
+    header nav .title h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    header nav .title p {
+        font-size: 14px;
+        line-height: 20px;
+
+    }
+
+    section .card img {
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    section .card .rate p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    section .card .rate span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    section .card .info i {
+        font-size: 23px;
+    }
+
+    section .card .info span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    section .card .info p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    section .card .card-body .title .head h2 {
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 700;
+    }
+
+    section .card .card-body .title .head span {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+    }
+
+    section .card .card-body .warnning p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    section .card .card-body .warnning span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    section .card .card-body {
+        max-height: 750px;
+    }
+
+    .card .nav-item {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .card #Nutrition .icon {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .card #Nutrition .data {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+
+
+
+}
+
+/* x1 */
+@media screen and (min-width: 1280px) {}
+
+/* xx1 */
+@media screen and (min-width: 1536px) {}
