@@ -88,7 +88,6 @@ var meals = [
          "Add some pasta water if the sauce is too thick"
       ]
    },
-
    {
       imgSrc: "images/meal3.jpg",
       mealRate: 4.9,
@@ -136,7 +135,6 @@ var meals = [
          "Serve with steamed rice"
       ]
    },
-
    {
       imgSrc: "images/meal4.jpg",
       mealRate: 4.6,
@@ -183,7 +181,6 @@ var meals = [
          "Adjust spices according to taste"
       ]
    },
-
    {
       imgSrc: "images/meal5.jpg",
       mealRate: 4.8,
@@ -231,7 +228,6 @@ var meals = [
          "Let the burger rest for a few minutes before serving"
       ]
    },
-
    {
       imgSrc: "images/meal6.jpg",
       mealRate: 4.5,
@@ -467,10 +463,10 @@ var meals = [
       ]
    }
 ];
-
-
-
 handelDisplayMeal()
+
+
+
 function handelDisplayMeal() {
    var Ingredients = ``
    var Instructions = ``
