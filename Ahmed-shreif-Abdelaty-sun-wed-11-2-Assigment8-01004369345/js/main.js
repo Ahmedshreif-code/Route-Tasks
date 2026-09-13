@@ -1,8 +1,5 @@
 var container = document.getElementById("myPage")
 var index = 0
-var Ingredients = ``
-var Instructions = ``
-var tips = ``
 
 
 
@@ -471,35 +468,40 @@ var meals = [
    }
 ];
 
-for (i = 0; i < meals[index].ingredients.length; i++) {
-   Ingredients += `
+
+
+handelDisplayMeal()
+function handelDisplayMeal() {
+   var Ingredients = ``
+   var Instructions = ``
+   var tips = ``
+
+   for (i = 0; i < meals[index].ingredients.length; i++) {
+      Ingredients += `
    <div class="grad my-2 d-flex align-items-center gap-3">
         <span class="main-color-bg py-2 px-3 rounded-circle text-white">${i + 1}</span>
         <p class="m-0">${meals[index].ingredients[i]}</p>
       </div>`
-}
+   }
 
-for (i = 0; i < meals[index].instruction.length; i++) {
-   Instructions += `
+   for (i = 0; i < meals[index].instruction.length; i++) {
+      Instructions += `
    <div class="instruction mb-4 d-flex align-items-center gap-3">
         <span class="main-color-bg py-2 px-3 rounded-4 text-white">${i + 1}</span>
         <p class="m-0">
          ${meals[index].instruction[i]}
         </p>
       </div>`
-}
-for (i = 0; i < meals[index].tips.length; i++) {
-   tips += `
+   }
+   for (i = 0; i < meals[index].tips.length; i++) {
+      tips += `
   <div class="tip bg-color rounded-3 p-3 mb-3">
         <i
           class="fa-solid fa-check fa-canvas-roomy rounded-circle main-color-bg text-white me-2"
         ></i>
         <span>${meals[index].tips[i]}</span>
       </div>`
-}
-
-handelDisplayMeal()
-function handelDisplayMeal() {
+   }
    container.innerHTML = `
  <div class="container">
         <div class="card mb-3 m-auto rounded-4 shadow">
