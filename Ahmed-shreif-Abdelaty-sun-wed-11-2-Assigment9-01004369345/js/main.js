@@ -194,12 +194,11 @@ function handleDisplayContacts(contactsArray = contacts) {
                 <div class="card contact rounded-4">
                   <div class="card-body p-3">
                     <div class="d-flex gap-2 align-items-center">
-                      <div class="position-relative">
-                        <i
-                          class="photo fa-canvas-roomy rounded-3 main-color-bg text-white p-3"
-                        >
-                          ${contactsArray[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}
-                        </i>
+                      <div class="position-relative ${contactsArray[i].image ? "col-2 " : " "}  ">
+                        ${contactsArray[i].image
+        ? `<img src="../images/${contactsArray[i].image}" class="photo fa-canvas-roomy rounded-3 w-100 " alt="">`
+        : `<i class="photo fa-canvas-roomy rounded-3 main-color-bg text-white p-3">${contactsArray[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}</i>`
+      }
                         <i
                           class="fa-solid fa-star fa-canvas-roomy rounded-3 bg-warning text-white rounded-circle border border-2 border-white fav-icon position-absolute ${contactsArray[i].favoriteCat ? " " : "d-none"}"
                         >
@@ -300,13 +299,13 @@ function handleDisplayContacts(contactsArray = contacts) {
     <div
                       class="p-3 my-2 d-flex justify-content-between align-items-center rounded-3 contac"
                     >
-                      <div class="d-flex gap-2 align-items-center">
-                        <i
-                          class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal"
-                        >
-                          ${favorites[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}
-                        </i>
-                        <div class="title">
+                      <div class="d-flex gap-2 align-items-center  ">
+                      
+                        ${favorites[i].image
+        ? `<div class="col-2"><img src="../images/${favorites[i].image}" class="fa-canvas-roomy rounded-3 w-100" alt=""></div>`
+        : `<i class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal">${favorites[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}</i>`
+      }
+                        <div class="title ">
                           <h5 class="m-0">${favorites[i].name}</h5>
                           <p class="m-0">${favorites[i].phone}</p>
                         </div>
@@ -328,12 +327,11 @@ function handleDisplayContacts(contactsArray = contacts) {
       <div
                       class="p-3 my-2 d-flex justify-content-between align-items-center rounded-3 contac"
                     >
-                      <div class="d-flex gap-2 align-items-center">
-                        <i
-                          class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal"
-                        >
-                          ${emergency[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}
-                        </i>
+                      <div class="d-flex gap-2 align-items-center  ">
+                        ${emergency[i].image
+        ? `<div class="col-2"><img src="../images/${emergency[i].image}" class="fa-canvas-roomy rounded-3 w-100" alt=""></div>`
+        : `<i class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal">${emergency[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}</i>`
+      }
                         <div class="title">
                           <h5 class="m-0">${emergency[i].name}</h5>
                           <p class="m-0">${emergency[i].phone}</p>
@@ -452,7 +450,8 @@ let egroupInput = document.getElementById("eGroup")
 let enotesInput = document.getElementById("eNotes")
 let efavoriteInput = document.getElementById("eFavorite")
 let eemergencyInput = document.getElementById("eEmergency")
-let con
+let eImageInput = document.getElementById("eImage")
+var con
 
 efullNameInput.addEventListener("input", () => {
   if (nameRegex.test(efullNameInput.value)) {
@@ -485,11 +484,13 @@ function handelEditeContact(i) {
   enotesInput.value = contacts[i].notes
   efavoriteInput.checked = contacts[i].favoriteCat
   eemergencyInput.checked = contacts[i].emergencyCat
+  eImageInput.value = ""
   con = i
 
 }
 function handelUpdateContact() {
   let newContact = {
+    image: eImageInput.files[0]?.name || contacts[con].image,
     name: efullNameInput.value,
     phone: ephoneNumberInput.value,
     email: eemailInput.value,
@@ -611,7 +612,6 @@ function handleSearch(value) {
 
 
 
-
 // clear form 
 function handleClearForm() {
   fullNameInput.value = ""
@@ -622,6 +622,7 @@ function handleClearForm() {
   notesInput.value = ""
   favoriteInput.checked = false
   emergencyInput.checked = false
+  userImageInput.value = ""
 }
 
 handleDisplayContacts()
