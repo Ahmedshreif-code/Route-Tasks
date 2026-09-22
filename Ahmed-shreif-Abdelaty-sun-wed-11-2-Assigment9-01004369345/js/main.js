@@ -188,6 +188,7 @@ function handleDisplayContacts(contactsArray = contacts) {
   // all
   let temp1 = ""
   for (i = 0; i < contactsArray.length; i++) {
+    const realIndex = contacts.indexOf(contactsArray[i]);
     temp1 += `
     <div class="col-md-6 col-12">
                 <div class="card contact rounded-4">
@@ -265,13 +266,13 @@ function handleDisplayContacts(contactsArray = contacts) {
                     </div>
                     <div class="btns">
                       <button
-                      onclick="handelAddFavoriteContact(${i})"
+                      onclick="handelAddFavoriteContact(${realIndex})"
                         class="favorite fa-canvas-roomy p-2 ${contactsArray[i].favoriteCat ? "bg-warning-subtle text-warning" : ""}  rounded-3 btn mx-1"
                       >
                         <i class=" ${contactsArray[i].favoriteCat ? "fa-solid fa-star " : "fa-regular fa-star text-muted"} "></i>
                       </button>
                       <button
-                      onclick="handelAddEmergencyContact(${i})"
+                      onclick="handelAddEmergencyContact(${realIndex})"
                         class="emergency fa-canvas-roomy p-2 ${contactsArray[i].emergencyCat ? "bg-danger-subtle text-danger" : ""}  rounded-3 btn mx-1"
                       >
                         <i class=" ${contactsArray[i].emergencyCat ? "fa-solid fa-heartbeat" : "fa-regular fa-heart text-muted"}"></i>
@@ -279,11 +280,11 @@ function handleDisplayContacts(contactsArray = contacts) {
                       <button
                         class="edite fa-canvas-roomy p-2 rounded-3 btn mx-1"
                         data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        onclick=" handelEditeContact(${i})"
+                        onclick=" handelEditeContact(${realIndex})"
                       >
                         <i class="fa-solid fa-pen"></i>
                       </button>
-                      <button class="delete fa-canvas-roomy p-2 rounded-3 btn" onclick="handelDeleteContact(${i})">
+                      <button class="delete fa-canvas-roomy p-2 rounded-3 btn" onclick="handelDeleteContact(${realIndex})">
                         <i class="fa-solid fa-trash"></i>
                       </button>
                     </div>
@@ -451,7 +452,7 @@ let egroupInput = document.getElementById("eGroup")
 let enotesInput = document.getElementById("eNotes")
 let efavoriteInput = document.getElementById("eFavorite")
 let eemergencyInput = document.getElementById("eEmergency")
-var con
+let con
 
 efullNameInput.addEventListener("input", () => {
   if (nameRegex.test(efullNameInput.value)) {
@@ -624,7 +625,3 @@ function handleClearForm() {
 }
 
 handleDisplayContacts()
-
-
-
-
