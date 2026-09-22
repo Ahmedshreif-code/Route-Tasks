@@ -1,0 +1,27 @@
+/* media query */
+/* condition */
+/* code  css miniy*/
+/* breakpoint  */
+/* mobile first */
+/* xs  */
+
+/* sm */
+@media screen and (min-width: 640px) {
+ 
+}
+/* md */
+@media screen and (min-width: 768px) {
+
+}
+/* lg */
+@media screen and (min-width: 1024px) {
+
+}
+/* xl */
+@media screen and (min-width: 1280px) {
+
+}
+/* xxl */
+@media screen and (min-width: 1536px) {
+}
+/* 2000px */

@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContactHub - Smart Contact Manager</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body class="bg-body-tertiary">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-md bg-body fixed-top">
+        <div class="container">
+          <div class="navbar-brand d-flex gap-2 align-items-center">
+            <i
+              class="fa-solid fa-address-book fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x"
+            ></i>
+            <div class="title">
+              <h1 class="m-0">Contact<span class="main-color">Hub</span></h1>
+              <p class="m-0">Smart Contact Manager</p>
+            </div>
+          </div>
+
+          <ul
+            class="navbar-nav ms-auto d-flex flex-row gap-2 align-items-center"
+          >
+            <li class="nav-item">
+              <div class="d-flex gap-2 align-items-center">
+                <button
+                  class="btn main-color-bg text-white"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  + Add <span class="d-none d-md-inline">Contact</span>
+                </button>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link d-flex gap-2 align-items-center">
+                <i class="fa-solid fa-bell d-none d-md-block"></i>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link gap-2 d-flex align-items-center">
+                <i class="fa-solid fa-gear d-none d-md-block"></i>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link gap-2 d-flex align-items-center">
+                <img class="rounded-4" src="images/avatar-4.jpg" alt="" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="cards pt-5">
+      <div class="container py-5">
+        <div class="row g-3">
+          <div class="col-6 col-lg-4">
+            <div
+              class="bg-body p-3 rounded-4 d-flex flex-row align-items-center justify-content-start gap-3"
+            >
+              <i
+                class="fa-solid fa-users fa-canvas-roomy p-3 fa-x bg-primary text-white rounded-4 shadow bg-gradient"
+              ></i>
+              <div class="content">
+                <h3 class="m-0">Total</h3>
+                <p id="Total" class="m-0">0</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <div
+              class="bg-body p-3 rounded-4 d-flex flex-row align-items-center justify-content-start gap-3"
+            >
+              <i
+                class="fa-solid fa-star fa-canvas-roomy p-3 fa-x sec-color-bg text-white rounded-4 shadow bg-gradient"
+              ></i>
+              <div class="content">
+                <h3 class="m-0">Favorites</h3>
+                <p id="Favorites" class="m-0">0</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <div
+              class="bg-body p-3 rounded-4 d-flex flex-row align-items-center justify-content-start gap-3"
+            >
+              <i
+                class="fa-solid fa-heartbeat fa-canvas-roomy p-3 fa-x bg-danger text-white rounded-4 shadow bg-gradient"
+              ></i>
+              <div class="content">
+                <h3 class="m-0">Emergency</h3>
+                <p id="emergency" class="m-0">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <div class="row g-3 position-relative">
+          <div class="col-lg-9 col-12">
+            <div class="title">
+              <h4>All Contacts</h4>
+              <p>
+                Manage and organize your
+                <span id="TotalContacts">0</span> contacts
+              </p>
+            </div>
+            <div class="position-relative">
+              <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+              <input
+                id="searchInput"
+                oninput="handleSearch(this.value)"
+                type="text"
+                placeholder="Search by name, phone, or email..."
+                class="form-control ps-5 p-3 rounded-4"
+              />
+            </div>
+            <div class="row g-3 mt-3" id="contactsContainer"></div>
+
+            <div
+              class="no-contact py-5 d-flex justify-content-center align-items-center text-muted text-center d-none"
+            >
+              <div>
+                <i
+                  class="fa-solid fa-address-book fa-canvas-roomy rounded-3 p-3 bg-body-secondary fa-2x my-3"
+                ></i>
+                <p>No contacts found</p>
+                <span>Click "Add Contact" to get started </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-12">
+            <div class="position-sticky sticky-lg-top" style="top: 70px">
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="Favorite bg-body shadow rounded-3">
+                    <div
+                      class="d-flex gap-2 align-items-center bg-warning-subtle p-3 rounded-top-3"
+                    >
+                      <i
+                        class="fa-solid fa-star fa-canvas-roomy rounded-3 sec-color-bg text-white p-2 fa-x"
+                      ></i>
+                      <div class="title">
+                        <h4 class="m-0">Favorites</h4>
+                        <p class="m-0">Quick access to starred contacts</p>
+                      </div>
+                    </div>
+                    <div class="contacs p-2" id="favoriteContainer">
+                      <div
+                        class="p-3 my-2 d-flex justify-content-between align-items-center rounded-3 contac"
+                      >
+                        <div class="d-flex gap-2 align-items-center">
+                          <i
+                            class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal"
+                          >
+                            AS
+                          </i>
+                          <div class="title">
+                            <h5 class="m-0">ahmed shreif</h5>
+                            <p class="m-0">01004369349</p>
+                          </div>
+                        </div>
+                        <div class="call">
+                          <a
+                            href="tel:01004369345"
+                            class="text-decoration-none"
+                          >
+                            <i
+                              class="fa-solid fa-phone fa-canvas-roomy rounded-3 p-2"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="No-Favorite text-muted d-flex justify-content-center align-items-center py-5 d-none"
+                    >
+                      <p>No favorites yet</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="Emergency bg-body shadow rounded-3">
+                    <div
+                      class="d-flex gap-2 align-items-center bg-danger-subtle p-3 rounded-top-3"
+                    >
+                      <i
+                        class="fa-solid fa-heartbeat fa-canvas-roomy rounded-3 bg-danger bg-gradient text-white p-2 fa-x"
+                      ></i>
+                      <div class="title">
+                        <h4 class="m-0">Emergency</h4>
+                        <p class="m-0">Important contacts for urgent calls</p>
+                      </div>
+                    </div>
+                    <div class="contacs p-2" id="emergencyContainer"></div>
+
+                    <div
+                      class="No-emergency text-muted d-flex justify-content-center align-items-center py-5 d-none"
+                    >
+                      <p>No emergency contacts</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Add New Contact
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="photo d-flex flex-column align-items-center gap-3">
+              <i
+                class="fa-solid fa-user text-white bg-primary fa-canvas-roomy p-4 rounded-circle fa-2x"
+              ></i>
+              <label class="btn btn-secondary">
+                <i class="fa-solid fa-camera"></i> Change Photo
+                <input type="file" class="d-none" id="Image" />
+              </label>
+            </div>
+            <form>
+              <label for="FullName">Full Name</label>
+              <input
+                id="FullName"
+                type="text"
+                class="form-control my-2"
+                placeholder="Enter full name"
+                required="true"
+              />
+              <p class="text-danger Error d-none">
+                Name should contain only letters and spaces (2-50 characters)
+              </p>
+
+              <label for="Phone">Phone Number</label>
+              <input
+                id="Phone"
+                type="tel"
+                class="form-control my-2"
+                placeholder="e.g., 01012345678"
+                required
+              />
+              <p class="text-danger Error d-none">
+                Please enter a valid Egyptian phone number
+              </p>
+              <label for="Email">Email Address</label>
+              <input
+                id="Email"
+                type="email"
+                class="form-control my-2"
+                placeholder="name@example.com"
+                required
+              />
+              <p class="text-danger Error d-none">Please enter a valid email</p>
+              <label for="Address">Address</label>
+              <input
+                id="Address"
+                type="text"
+                class="form-control my-2"
+                placeholder="Enter address"
+                required
+              />
+              <label for="Group">Group</label>
+              <select name="Group" id="Group" class="form-select my-2">
+                <option value="Select a group">Select a group</option>
+                <option value="Family">Family</option>
+                <option value="Freinds">Freinds</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Other">Other</option>
+              </select>
+              <label for="Notes">Notes</label>
+              <textarea
+                class="form-control my-2"
+                name="Notes"
+                id="Notes"
+                placeholder="Add notes about this contact"
+              ></textarea>
+              <input
+                type="checkbox"
+                name="Favorite"
+                id="Favorite"
+                class="mx-2"
+              />
+              <label for="Favorite"
+                ><i
+                  class="fa-solid fa-star"
+                  style="color: rgb(255, 212, 59)"
+                ></i>
+                Favorite</label
+              >
+              <input
+                type="checkbox"
+                name="Emergency"
+                id="Emergency"
+                class="mx-2"
+              />
+              <label for="Emergency"
+                ><i
+                  class="fa-solid fa-heart-pulse"
+                  style="color: rgb(255, 0, 0)"
+                ></i>
+                Emergency</label
+              >
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="row w-100">
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn btn-secondary w-100"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn main-color-bg text-white w-100"
+                  onclick="handelAddContact()"
+                >
+                  <i class="fa-solid fa-check"></i>
+                  Save Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Edite Contact
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="photo d-flex flex-column align-items-center gap-3">
+              <i
+                class="fa-solid fa-user text-white bg-primary fa-canvas-roomy p-4 rounded-circle fa-2x"
+              ></i>
+              <label class="btn btn-secondary">
+                <i class="fa-solid fa-camera"></i> Change Photo
+                <input type="file" class="d-none" id="Image" />
+              </label>
+            </div>
+            <form>
+              <label for="eFullName">Full Name</label>
+              <input
+                id="eFullName"
+                type="text"
+                class="form-control my-2"
+                placeholder="Enter full name"
+                required="true"
+              />
+              <p class="text-danger Error d-none">
+                Name should contain only letters and spaces (2-50 characters)
+              </p>
+
+              <label for="ePhone">Phone Number</label>
+              <input
+                id="ePhone"
+                type="tel"
+                class="form-control my-2"
+                placeholder="e.g., 01012345678"
+                required
+              />
+              <p class="text-danger Error d-none">
+                Please enter a valid Egyptian phone number
+              </p>
+              <label for="eEmail">Email Address</label>
+              <input
+                id="eEmail"
+                type="email"
+                class="form-control my-2"
+                placeholder="name@example.com"
+                required
+              />
+              <p class="text-danger Error d-none">Please enter a valid email</p>
+              <label for="eAddress">Address</label>
+              <input
+                id="eAddress"
+                type="text"
+                class="form-control my-2"
+                placeholder="Enter address"
+                required
+              />
+              <label for="eGroup">Group</label>
+              <select name="eGroup" id="eGroup" class="form-select my-2">
+                <option value="Select a group">Select a group</option>
+                <option value="Family">Family</option>
+                <option value="Freinds">Freinds</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Other">Other</option>
+              </select>
+              <label for="eNotes">Notes</label>
+              <textarea
+                class="form-control my-2"
+                name="eNotes"
+                id="eNotes"
+                placeholder="Add notes about this contact"
+              ></textarea>
+              <input
+                type="checkbox"
+                name="eFavorite"
+                id="eFavorite"
+                class="mx-2"
+              />
+              <label for="eFavorite"
+                ><i
+                  class="fa-solid fa-star"
+                  style="color: rgb(255, 212, 59)"
+                ></i>
+                Favorite</label
+              >
+              <input
+                type="checkbox"
+                name="eEmergency"
+                id="eEmergency"
+                class="mx-2"
+              />
+              <label for="eEmergency"
+                ><i
+                  class="fa-solid fa-heart-pulse"
+                  style="color: rgb(255, 0, 0)"
+                ></i>
+                Emergency</label
+              >
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="row w-100">
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn btn-secondary w-100"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn main-color-bg text-white w-100"
+                  onclick="handelUpdateContact()"
+                >
+                  <i class="fa-solid fa-check"></i>
+                  Save Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

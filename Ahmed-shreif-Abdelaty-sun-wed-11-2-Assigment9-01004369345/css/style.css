@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+
+:root {
+    --main-color: #F54900;
+}
+
+.bg-color {
+    background-color: #fffbea;
+}
+
+.main-color {
+
+    color: #7F22FE;
+}
+
+.main-color-bg {
+    background-color: #752AFD;
+}
+
+.sec-color-bg {
+    background-color: #FF9E00;
+
+}
+
+.mail {
+    background-color: #EDE9FE;
+    color: #7F22FE;
+}
+
+
+i,
+h1,
+span,
+a {
+    display: inline-block;
+}
+
+
+
+/*////////////////////////////////////////////////// header//////////////////////////////////////////////////////////////////////// */
+header nav img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-link,
+.nav-item button {
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    color: #364153;
+    cursor: pointer;
+    background-color: #F3F4F6;
+    border-radius: 10px;
+
+}
+
+.nav-link:hover a {
+    color: #364153;
+}
+
+.btn.main-color-bg:hover,
+.btn.main-color-bg:focus-visible,
+.btn.main-color-bg:first-child:active {
+    background-color: #752AFD;
+}
+
+.nav-item button:hover,
+.nav-item button:focus-visible,
+.nav-item .btn:first-child:active {
+    background-color: #752AFD;
+}
+
+.nav-item button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 10px #742afd5b;
+}
+
+header nav .title h1 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+header nav .title p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: oklch(0.551 0.027 264.364);
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+
+}
+
+/* /////////////////////////cards/////////////////////////////////// */
+.cards .bg-body {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.404);
+}
+
+.cards .bg-body:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.603);
+}
+
+.cards .content h3 {
+    font-size: 11px;
+    line-height: 17px;
+    font-weight: 500;
+    color: oklch(0.551 0.027 264.364);
+    text-transform: uppercase;
+}
+
+.cards .content p {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+/* ////////////////////contacts //////////////////// */
+.contacts .position-relative .position-absolute {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+.contacts .title h4 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.contacts .title p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.contacts .Favorite .title h4,
+.contacts .Emergency .title h4 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.contacts .favorite .title p,
+.contacts .emergency .title p {
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 400;
+}
+
+.contacts .contact,
+.call a i {
+    transition: all 0.3s;
+}
+
+.contacts .contact:hover {
+    box-shadow: 0px 10px 10px rgb(133, 132, 132);
+}
+
+
+.contacts .card .card-body .photo {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.contacts .card .card-body .title h5 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.contacts .card .card-body .title p,
+.contacts .card .card-body .e-mail,
+.contacts .card .card-body .address {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.contacts .card .card-body .title p i,
+.contacts .card .card-body .e-mail i,
+.contacts .card .card-body .address i {
+    font-size: 10px;
+}
+
+.contacts .card .card-body .category {
+    font-size: 11px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
+.contacts .card .card-footer i {
+    font-size: 13px;
+}
+
+.contacts .card .card-footer .edite,
+.contacts .card .card-footer .delete {
+    color: #929292;
+    transition: all 0.2s;
+}
+
+.contacts .card .card-footer .edite:hover {
+    color: #4F39F6;
+    background-color: #EEF2FF;
+
+}
+
+.contacts .card .card-footer .delete:hover {
+    color: #EC003F;
+    background-color: #FFF1F2;
+
+}
+
+
+.contacts .card .fav-icon {
+    top: 5px;
+    right: -5px;
+    left: auto;
+    font-size: 10px;
+
+}
+
+.contacts .card .emer-icon {
+    top: auto;
+    bottom: -5px;
+    right: -5px;
+    left: auto;
+    transform: translateY(0);
+    font-size: 10px;
+}
+
+
+
+.Favorite .contacs .contac {
+    background: #F9FAFB;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.Favorite .contacs .contac:hover {
+    background-color: #FFF3CD;
+}
+
+.Favorite .contacs .contac .call a i {
+    background-color: #D0FAE5;
+    color: #00BC7D;
+    font-size: 12px;
+
+}
+
+.Emergency .contacs .contac .call a i {
+    background-color: #FFE4E6;
+    color: #FF2056;
+    transition: all 0.2s;
+    font-size: 12px;
+}
+
+.Favorite .contacs .contac:hover .call a i {
+    background-color: #00BC7D;
+    color: white;
+}
+
+.Emergency .contacs .contac:hover .call a i {
+    background-color: #FF2056;
+    color: white;
+}
+
+
+.Emergency .contacs .contac {
+    background: #F9FAFB;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.Emergency .contacs .contac:hover {
+    background-color: #F8D7DA;
+}
+
+
+.contacs .contac .title h5 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.contacs .contac .title p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.card.contact.rounded-4 {
+    min-height: 250px;
+}
+
+.Error {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.work {
+    background: #F3E8FF;
+    color: #8246E9;
+}
+
+.family {
+    background: #DBEAFE;
+    color: #1463EC;
+}
+
+.freinds {
+    background: #DBFCE7;
+    color: #009966;
+}
+
+.school {
+    background-color: #FEF3C6;
+    color: #FFB900;
+}
+
+.other {
+    background-color: #F3F4F6;
+    color: black;
+}
+
+/* ////////////////////media query///////////////////////// */
+/* sm */
+@media screen and (min-width: 640px) {}
+
+/* md */
+@media screen and (min-width: 768px) {}
+
+/* 1g */
+@media screen and (min-width: 1024px) {
+    header nav .title h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    header nav .title p {
+        font-size: 14px;
+        line-height: 20px;
+
+    }
+
+    .cards .content h3 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .cards .content p {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .contacts .title h4 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .contacts .favorite .title h4,
+    .contacts .emergency .title h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .contacts .favorite .title p,
+    .contacts .emergency .title p {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+
+
+
+
+
+
+}
+
+/* x1 */
+@media screen and (min-width: 1280px) {}
+
+/* xx1 */
+@media screen and (min-width: 1536px) {}
