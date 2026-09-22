@@ -196,7 +196,7 @@ function handleDisplayContacts(contactsArray = contacts) {
                     <div class="d-flex gap-2 align-items-center">
                       <div class="position-relative ${contactsArray[i].image ? "col-2 " : " "}  ">
                         ${contactsArray[i].image
-        ? `<img src="../images/${contactsArray[i].image}" class="photo fa-canvas-roomy rounded-3 w-100 " alt="">`
+        ? `<img src="./images/${contactsArray[i].image}" class="photo fa-canvas-roomy rounded-3 w-100 " alt="">`
         : `<i class="photo fa-canvas-roomy rounded-3 main-color-bg text-white p-3">${contactsArray[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}</i>`
       }
                         <i
@@ -302,7 +302,7 @@ function handleDisplayContacts(contactsArray = contacts) {
                       <div class="d-flex gap-2 align-items-center  ">
                       
                         ${favorites[i].image
-        ? `<div class="col-2"><img src="../images/${favorites[i].image}" class="fa-canvas-roomy rounded-3 w-100" alt=""></div>`
+        ? `<div class="col-2"><img src="./images/${favorites[i].image}" class="fa-canvas-roomy rounded-3 w-100" alt=""></div>`
         : `<i class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal">${favorites[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}</i>`
       }
                         <div class="title ">
@@ -329,7 +329,7 @@ function handleDisplayContacts(contactsArray = contacts) {
                     >
                       <div class="d-flex gap-2 align-items-center  ">
                         ${emergency[i].image
-        ? `<div class="col-2"><img src="../images/${emergency[i].image}" class="fa-canvas-roomy rounded-3 w-100" alt=""></div>`
+        ? `<div class="col-2"><img src="./images/${emergency[i].image}" class="fa-canvas-roomy rounded-3 w-100" alt=""></div>`
         : `<i class="fa-canvas-roomy rounded-3 main-color-bg text-white p-2 fa-x fst-normal">${emergency[i].name.split(" ").splice(0, 2).map(word => word[0]).join("").toUpperCase()}</i>`
       }
                         <div class="title">
