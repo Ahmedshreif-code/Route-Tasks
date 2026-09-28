@@ -71,7 +71,7 @@ let settingsSidebar = document.getElementById("settings-sidebar");
 let settingsCloseBtn = document.getElementById("close-settings");
 let setlang = document.querySelectorAll(".font-option");
 let resetBtn = document.getElementById("reset-settings");
-let selectedFont = "tajawal";
+let selectedFont = localStorage.getItem("selectedFont") || "tajawal";
 
 // open settings sidebar
 settingsToggleBtn.addEventListener("click", () => {
@@ -109,9 +109,25 @@ function handelResetSettings() {
   const tajawalOption = document.querySelector('[data-font="tajawal"]');
   document.body.classList.remove("font-cairo", "font-tajawal", "font-alexandria");
   document.body.classList.add("font-tajawal");
+  localStorage.setItem("selectedFont", "tajawal");
   applyThemeColor(themeColors[0]);
   handleActiveFont(tajawalOption);
   handelCloseSettings();
+}
+function handelApplySavedFont() {
+  const savedFontOption = document.querySelector(
+    `[data-font="${selectedFont}"]`
+  );
+
+  document.body.classList.remove(
+    "font-cairo",
+    "font-tajawal",
+    "font-alexandria"
+  );
+  document.body.classList.add(`font-${selectedFont}`);
+  if (savedFontOption) {
+    handleActiveFont(savedFontOption);
+  }
 }
 function handleActiveFont(option) {
   setlang.forEach((opt) => {
@@ -142,21 +158,21 @@ function handleFontChange(option) {
   handleActiveFont(option);
 
   selectedFont = option.getAttribute("data-font");
-
   document.body.classList.remove(
     "font-cairo",
     "font-tajawal",
     "font-alexandria"
   );
-
   document.body.classList.add("font-" + selectedFont);
+  localStorage.setItem("selectedFont", selectedFont);
 }
+handelApplySavedFont();
 
 
-// Theme Color Change
+// theme Color Change
 
 
-// Load saved color
+// load saved color
 const savedThemeColor = localStorage.getItem("themeColor");
 const themeColorsGrid = document.getElementById("theme-colors-grid");
 
@@ -182,12 +198,10 @@ function applyThemeColor(color) {
 
   localStorage.setItem("themeColor", color);
 
-  // Remove active class from all colors
   document.querySelectorAll(".theme-color").forEach((button) => {
     button.classList.remove("active");
   });
 
-  // Add active class to selected color
   const selectedButton = document.querySelector(
     `.theme-color[data-color="${color}"]`
   );
@@ -197,7 +211,7 @@ function applyThemeColor(color) {
   }
 }
 
-// Create color buttons
+// create color buttons
 themeColors.forEach((color) => {
   const button = document.createElement("button");
 
@@ -218,10 +232,115 @@ themeColors.forEach((color) => {
 });
 
 
-
+// apply saved color or default color
 if (savedThemeColor) {
   applyThemeColor(savedThemeColor);
 } else {
   applyThemeColor(themeColors[0]);
+}
+
+
+
+// my projects filter 
+let categories = document.querySelectorAll(".portfolio-filter");
+// select category and activate it and filter projects based on category
+categories.forEach((category) => {
+  category.addEventListener("click", () => {
+    let filter = category.getAttribute("data-filter");
+    handleActiveCategory(filter);
+    categories.forEach((cat) => {
+      cat.classList = "portfolio-filter px-8 py-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold transition-all duration-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700"
+    });
+    category.classList = "portfolio-filter active px-8 py-3 rounded-xl bg-linear-to-r from-primary to-secondary text-white font-bold transition-all duration-300 hover:shadow-lg hover:shadow-primary/50"
+  })
+
+})
+// filter projects based on category
+function handleActiveCategory(category) {
+  let projects = document.querySelectorAll(".portfolio-item");
+  projects.forEach((project) => {
+    if (project.getAttribute("data-category") === category || category === "all") {
+      project.style.display = "block";
+    } else {
+      project.style.display = "none";
+    }
+  });
+}
+
+
+// Testimonials Carousel
+let carousel = document.querySelector("#testimonials-carousel");
+let cards = carousel.querySelectorAll(".testimonial-card");
+let currentIndex = 0;
+
+handleCarouselIndicators()
+// handle carousel show based on screen size
+function handleVisibleCards() {
+  if (window.innerWidth >= 1024) { return 3; }
+  else if (window.innerWidth >= 768) { return 2; }
+  else { return 1; }
+}
+// handle carousel update
+function handleUpdateCarousel() {
+  let visibleCards = handleVisibleCards();
+  let cardWidth = 100 / visibleCards;
+  carousel.style.transform = `translateX(${currentIndex * cardWidth}%)`;
+
+}
+// handle next button click
+function handleNext() {
+  let visibleCards = handleVisibleCards();
+  if (currentIndex < cards.length - visibleCards) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  handleUpdateCarousel();
+  handelUpdateActiveIndicator();
+
+
+}
+// handle previous button click
+function handlePrev() {
+  let visibleCards = handleVisibleCards();
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = cards.length - visibleCards;
+  }
+  handleUpdateCarousel();
+  handelUpdateActiveIndicator();
+
+}
+
+// handle carousel indicators
+function handleCarouselIndicators() {
+  let indecators = document.querySelectorAll(".carousel-indicator");
+  indecators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => {
+      currentIndex = index;
+
+      handleUpdateCarousel();
+      handelUpdateActiveIndicator();
+    });
+  });
+}
+// handel active indicator
+function handelUpdateActiveIndicator() {
+  let indicators = document.querySelectorAll(".carousel-indicator");
+
+  indicators.forEach((indicator, index) => {
+    indicator.classList.remove("bg-primary", "scale-125");
+    indicator.classList.add("bg-slate-400", "dark:bg-slate-600");
+
+    if (index === currentIndex) {
+      indicator.classList.remove(
+        "bg-slate-400",
+        "dark:bg-slate-600"
+      );
+
+      indicator.classList.add("bg-primary", "scale-125");
+    }
+  });
 }
 
