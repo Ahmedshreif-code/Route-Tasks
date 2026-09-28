@@ -177,33 +177,81 @@ const savedThemeColor = localStorage.getItem("themeColor");
 const themeColorsGrid = document.getElementById("theme-colors-grid");
 
 const themeColors = [
-  "#6366f1",
-  "#3b82f6",
-  "#06b6d4",
-  "#10b981",
-  "#22c55e",
-  "#eab308",
-  "#f97316",
-  "#ef4444",
-  "#ec4899",
-  "#a855f7",
-  "#8b5cf6",
-  "#14b8a6",
-];
+  {
+    primary: "#6366f1",
+    secondary: "#818cf8",
+    accent: "#c7d2fe",
+  },
+  {
+    primary: "#3b82f6",
+    secondary: "#60a5fa",
+    accent: "#bfdbfe",
+  },
+  {
+    primary: "#06b6d4",
+    secondary: "#22d3ee",
+    accent: "#a5f3fc",
+  },
+  {
+    primary: "#10b981",
+    secondary: "#34d399",
+    accent: "#a7f3d0",
+  },
+  {
+    primary: "#22c55e",
+    secondary: "#4ade80",
+    accent: "#bbf7d0",
+  },
+  {
+    primary: "#eab308",
+    secondary: "#facc15",
+    accent: "#fef08a",
+  },
+  {
+    primary: "#f97316",
+    secondary: "#fb923c",
+    accent: "#fed7aa",
+  },
+  {
+    primary: "#ef4444",
+    secondary: "#f87171",
+    accent: "#fecaca",
+  },
+  {
+    primary: "#ec4899",
+    secondary: "#f472b6",
+    accent: "#fbcfe8",
+  },
+  {
+    primary: "#a855f7",
+    secondary: "#c084fc",
+    accent: "#e9d5ff",
+  },
+  {
+    primary: "#8b5cf6",
+    secondary: "#a78bfa",
+    accent: "#ddd6fe",
+  },
+  {
+    primary: "#14b8a6",
+    secondary: "#2dd4bf",
+    accent: "#99f6e4",
+  },
+]
 
-function applyThemeColor(color) {
-  document.documentElement.style.setProperty("--color-primary", color);
-  document.documentElement.style.setProperty("--color-secondary", color);
-  document.documentElement.style.setProperty("--color-accent", color);
+function applyThemeColor(theme) {
+  document.documentElement.style.setProperty("--color-primary", theme.primary)
+  document.documentElement.style.setProperty("--color-secondary", theme.secondary)
+  document.documentElement.style.setProperty("--color-accent", theme.accent)
 
-  localStorage.setItem("themeColor", color);
+  localStorage.setItem("themeColor", JSON.stringify(theme));
 
   document.querySelectorAll(".theme-color").forEach((button) => {
     button.classList.remove("active");
   });
 
   const selectedButton = document.querySelector(
-    `.theme-color[data-color="${color}"]`
+    `[data-primary="${theme.primary}"]`
   );
 
   if (selectedButton) {
@@ -212,7 +260,7 @@ function applyThemeColor(color) {
 }
 
 // create color buttons
-themeColors.forEach((color) => {
+themeColors.forEach((theme) => {
   const button = document.createElement("button");
 
   button.type = "button";
@@ -220,21 +268,27 @@ themeColors.forEach((color) => {
   button.className =
     "theme-color w-10 h-10 rounded-full border-2 border-transparent hover:scale-110 transition-all duration-300";
 
-  button.style.backgroundColor = color;
-
-  button.setAttribute("data-color", color);
+  button.style.background = `
+    linear-gradient(
+      135deg,
+      ${theme.primary} 0%,
+      ${theme.secondary} 50%,
+      ${theme.accent} 100%
+    )
+  `
+  button.setAttribute("data-primary", theme.primary);
 
   themeColorsGrid.appendChild(button);
 
   button.addEventListener("click", () => {
-    applyThemeColor(color);
+    applyThemeColor(theme);
   });
 });
 
 
 // apply saved color or default color
 if (savedThemeColor) {
-  applyThemeColor(savedThemeColor);
+  applyThemeColor(JSON.parse(savedThemeColor));
 } else {
   applyThemeColor(themeColors[0]);
 }
