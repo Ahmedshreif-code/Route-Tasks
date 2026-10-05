@@ -15,8 +15,8 @@ This repository contains all of my assignments and tasks completed during the **
 6. Exam1 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Exam1-01004369345/
 7. assignment 8 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment8-01004369345/
 8. assignment 9 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sun-wed-11-2-Assigment9-01004369345/
-9. assignment 10 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sat-11-2-Assigment10-01004369345/
-10. assignment 11 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sat-11-2-Assigment11-01004369345/
+9. assignment 10 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sat-10-4-Assigment10-01004369345/
+10. assignment 11 demo: https://ahmedshreif-code.github.io/Route-Tasks/Ahmed-shreif-Abdelaty-sat-10-4-Assigment11-01004369345/
 
 ## 📁 Repository Structure
 
