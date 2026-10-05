@@ -57,7 +57,7 @@ const formattedDate = dateObj.toLocaleDateString("en-US", {
                   type="date"
                   id="apod-date-input"
                   class="custom-date-input"
-                  value="${getToday()}"
+                  value="${date}"
                   max="${getToday()}"
                   min="1995-06-16"
                 />
@@ -202,18 +202,12 @@ function setupDatePicker() {
                 day: "numeric"
             }
         );
-
         dateText.textContent = formattedDate;
-
-      
     });
 
   loadBtn.addEventListener("click", function () {
-
         const selectedDate = dateInput.value;
-
         fetchApodDataByDate(selectedDate);
-
     });
     todayBtn.addEventListener("click", function () {
         const todayDate = getToday();
