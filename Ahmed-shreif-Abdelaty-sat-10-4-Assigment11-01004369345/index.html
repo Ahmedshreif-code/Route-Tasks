@@ -6,7 +6,7 @@
     <title>COSMOS - Space Dashboard</title>
     <link rel="icon" href="./assets/images/favicon.png" />
     <script>
-      window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+      window.FontAwesomeConfig = { autoReplaceSvg: 'nest' }
     </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
@@ -206,22 +206,19 @@
                 id="apod-image-container"
                 class="relative rounded-2xl overflow-hidden group h-[300px] md:h-[400px] lg:h-[600px] bg-slate-800/50 flex items-center justify-center"
               >
-                <div id="apod-loading" class="text-center ">
+                <div id="apod-loading" class="text-center">
                   <i
                     class="fas fa-spinner fa-spin text-4xl text-blue-400 mb-4"
                   ></i>
                   <p class="text-slate-400">Loading today's image...</p>
                 </div>
                 <!-- Using a placeholder image or one from assets if available. Using a reliable external placeholder for now or a relative path if we knew one. Sticking to a colored placeholder div if no image, but let's try a realistic placeholder or just the rocket icon style used elsewhere if we want to be safe. But user wants design. I'll use a relative path assuming assets exist or a generic space placeholder. -->
-                
-                
               </div>
             </div>
             <div class="space-y-4 md:space-y-6">
               <div
                 class="bg-slate-800/50 border border-slate-700 rounded-xl md:rounded-2xl p-4 md:p-6"
               >
-                
                 <div
                   class="flex items-center space-x-4 mb-4 text-sm text-slate-400"
                 >
@@ -229,8 +226,6 @@
                     ><i class="far fa-calendar mr-2"></i>Invalid Date</span
                   >
                 </div>
-               
-               
               </div>
               <div
                 class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6"
@@ -625,153 +620,11 @@
           <div
             id="planets-grid"
             class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-8 gap-3 md:gap-4 mb-8 md:mb-12"
+          ></div>
+          <div
+            class="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6"
+            id="planet-detail-container"
           >
-            <!-- Mercury -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="mercury"
-              style="--planet-color: #eab308"
-              onmouseover="this.style.borderColor='#eab30880'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/mercury.png"
-                  alt="Mercury"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Mercury</h4>
-              <p class="text-xs text-slate-400 text-center">0.39 AU</p>
-            </div>
-            <!-- Venus -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="venus"
-              style="--planet-color: #f97316"
-              onmouseover="this.style.borderColor='#f9731680'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/venus.png"
-                  alt="Venus"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Venus</h4>
-              <p class="text-xs text-slate-400 text-center">0.72 AU</p>
-            </div>
-            <!-- Earth -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="earth"
-              style="--planet-color: #3b82f6"
-              onmouseover="this.style.borderColor='#3b82f680'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/earth.png"
-                  alt="Earth"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Earth</h4>
-              <p class="text-xs text-slate-400 text-center">1.00 AU</p>
-            </div>
-            <!-- Mars -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="mars"
-              style="--planet-color: #ef4444"
-              onmouseover="this.style.borderColor='#ef444480'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/mars.png"
-                  alt="Mars"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Mars</h4>
-              <p class="text-xs text-slate-400 text-center">1.52 AU</p>
-            </div>
-            <!-- Jupiter -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="jupiter"
-              style="--planet-color: #fb923c"
-              onmouseover="this.style.borderColor='#fb923c80'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/jupiter.png"
-                  alt="Jupiter"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Jupiter</h4>
-              <p class="text-xs text-slate-400 text-center">5.20 AU</p>
-            </div>
-            <!-- Saturn -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="saturn"
-              style="--planet-color: #facc15"
-              onmouseover="this.style.borderColor='#facc1580'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/saturn.png"
-                  alt="Saturn"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Saturn</h4>
-              <p class="text-xs text-slate-400 text-center">9.58 AU</p>
-            </div>
-            <!-- Uranus -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="uranus"
-              style="--planet-color: #06b6d4"
-              onmouseover="this.style.borderColor='#06b6d480'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/uranus.png"
-                  alt="Uranus"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Uranus</h4>
-              <p class="text-xs text-slate-400 text-center">19.22 AU</p>
-            </div>
-            <!-- Neptune -->
-            <div
-              class="planet-card bg-slate-800/50 border border-slate-700 rounded-2xl p-4 transition-all cursor-pointer group"
-              data-planet-id="neptune"
-              style="--planet-color: #2563eb"
-              onmouseover="this.style.borderColor='#2563eb80'"
-              onmouseout="this.style.borderColor='#334155'"
-            >
-              <div class="relative mb-3 h-24 flex items-center justify-center">
-                <img
-                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                  src="./assets/images/neptune.png"
-                  alt="Neptune"
-                />
-              </div>
-              <h4 class="font-semibold text-center text-sm">Neptune</h4>
-              <p class="text-xs text-slate-400 text-center">30.05 AU</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6">
             <div
               class="xl:col-span-2 bg-slate-800/50 border border-slate-700 rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8"
             >
@@ -957,28 +810,36 @@
                   Quick Facts
                 </h4>
                 <ul id="planet-facts" class="space-y-3 text-sm">
-                  <li class="flex items-start">
+                 <li class="flex items-start">
                     <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
                     <span class="text-slate-300"
-                      >Only known planet with liquid water</span
+                      >
+                      Mass: 4.86747 × 10^24 kg
+                    </span
                     >
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
                     <span class="text-slate-300"
-                      >Atmosphere contains 78% nitrogen</span
+                      >
+                        Surface gravity: 8.87 m/s²
+                      </span
                     >
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
                     <span class="text-slate-300"
-                      >Magnetic field protects from solar wind</span
+                      >
+                    Density: 5.243 g/cm³
+                      </span
                     >
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
                     <span class="text-slate-300"
-                      >Formed 4.54 billion years ago</span
+                      >
+                    Axial tilt: 177.36°
+                      </span
                     >
                   </li>
                 </ul>
