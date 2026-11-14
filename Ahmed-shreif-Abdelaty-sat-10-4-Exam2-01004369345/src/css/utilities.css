@@ -96,6 +96,15 @@
   .search-form-row {
     flex-direction: column;
   }
+
+  .dashboard-search-form .search-form-row {
+    align-items: stretch;
+  }
+
+  .dashboard-search-form .search-form-row .form-group {
+    width: 100%;
+    min-width: 0;
+  }
   
   .search-form-row .form-group.flex-1,
   .search-form-row .form-group.flex-2 {

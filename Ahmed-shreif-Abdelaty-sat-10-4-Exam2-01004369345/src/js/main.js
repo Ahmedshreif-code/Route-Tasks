@@ -11,7 +11,6 @@ class App {
     this.currencyAPIKey = '82c7d5e4b54f55ada8c00be6'
     this.currencyBaseURL = `https://v6.exchangerate-api.com/v6/${this.currencyAPIKey}/`
     this.selectedCountryCurrency = null
-    this.populateCurrencySelectors()
     this.initCurrencyEventListeners()
     this.countryData = []
     this.weatherData = []
@@ -24,6 +23,7 @@ class App {
     this.selectCountrytEventListeners()
     this.clearSelectionEventListeners()
     this.exploreBtnEventListeners()
+    this.setupMobileMenu()
     this.initRounting()
     this.setupMyPlansListeners()
     this.attachHeartListeners()
@@ -88,9 +88,7 @@ class App {
   }
   fetchCurrencyConversion = async (amount, fromCode, toCode) => {
     const response = await fetch(
-      `${this.currencyBaseURL}pair/${encodeURIComponent(
-        fromCode
-      )}/${encodeURIComponent(toCode)}/${encodeURIComponent(amount)}`
+      `${this.currencyBaseURL}pair/${fromCode}/${toCode}/${amount}`
     )
     if (!response.ok) {
       throw new Error(`Currency API error: ${response.status}`)
@@ -164,25 +162,33 @@ class App {
       const temp = fromEle.value
       fromEle.value = toEle.value
       toEle.value = temp
-      this.handleConversion() // Re-calculate after swap
+      this.handleConversion() 
     })
   }
-  populateCurrencySelectors = () => {
+  populateCurrencySelectors = async availableCountries => {
     const fromSelect = document.querySelector('#currency-from')
     const toSelect = document.querySelector('#currency-to')
     const previousFrom = fromSelect.value || 'USD'
     const previousTo = toSelect.value || 'EGP'
-    const fallbackCodes = [
+    const availableCountryCodes = new Set(
+      availableCountries.map(country => country.countryCode.toUpperCase())
+    )
+    const countryDetails = await this.fetchCountryDetailsData()
+    const currencyCodes = [
       ...new Set(
-        [...fromSelect.options, ...toSelect.options]
-          .map(option => option.value)
+        countryDetails
+          .filter(country =>
+            availableCountryCodes.has(country.iso2?.toUpperCase())
+          )
+          .map(country => country.currency?.trim().toUpperCase())
           .filter(Boolean)
       )
-    ]
-    const currencyCodes =
-      typeof Intl.supportedValuesOf === 'function'
-        ? Intl.supportedValuesOf('currency')
-        : fallbackCodes
+    ].sort()
+
+    if (currencyCodes.length === 0) {
+      throw new Error('No currencies found for available countries')
+    }
+
     const currencyNames = new Intl.DisplayNames(['en'], {
       type: 'currency'
     })
@@ -196,10 +202,17 @@ class App {
       toSelect.add(new Option(`${code} - ${name}`, code))
     })
 
+    const fallbackFrom = currencyCodes.includes('USD')
+      ? 'USD'
+      : currencyCodes[0]
+    const fallbackTo = currencyCodes.includes('EGP')
+      ? 'EGP'
+      : currencyCodes.find(code => code !== fallbackFrom) || fallbackFrom
+
     fromSelect.value = currencyCodes.includes(previousFrom)
       ? previousFrom
-      : 'USD'
-    toSelect.value = currencyCodes.includes(previousTo) ? previousTo : 'EGP'
+      : fallbackFrom
+    toSelect.value = currencyCodes.includes(previousTo) ? previousTo : fallbackTo
   }
   fetchCountriesAvailable = async () => {
     try {
@@ -217,9 +230,7 @@ class App {
       selectCountryEle
         .querySelectorAll('option:not(:first-child)')
         .forEach(option => option.remove())
-      const countriesSorted = data.sort((a, b) => {
-        return a.name.localeCompare(b.name)
-      })
+      const countriesSorted = data.sort((a, b) => a.name.localeCompare(b.name))
       countriesSorted.forEach(country => {
         const option = document.createElement('option')
         option.value = country.countryCode
@@ -228,6 +239,10 @@ class App {
       })
       selectCountryEle.value = selectedCountryCode
       this.renderCountryOptions()
+      this.populateCurrencySelectors(countriesSorted).catch(error => {
+        console.error('Currency selectors fetch failed:', error)
+        this.showToast('Unable to load currencies for available countries.', 'error')
+      })
     } catch (error) {
       console.error('Available Countries fetch failed:', error.message)
     }
@@ -318,7 +333,7 @@ class App {
         eventsURL.searchParams.set('size', '20')
         if (includeCity) eventsURL.searchParams.set('city', city)
 
-        const response = await fetch(eventsURL, { mode: 'cors' })
+        const response = await fetch(eventsURL)
         if (!response.ok) {
           throw new Error(`Events API error: ${response.status}`)
         }
@@ -643,7 +658,6 @@ class App {
       const countryFlagInDestinationComponent = document.querySelector(
         '#selected-country-flag'
       )
-
       countryFlagInDestinationComponent.setAttribute(
         'src',
         `${this.countryData.flags.png}`
@@ -1030,9 +1044,9 @@ class App {
         .querySelector('.btn-map-link')
         .setAttribute(
           'href',
-          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+          `https://www.google.com/maps/search/?api=1&query=${
             `${countryData.name.common} ${countryData.capital[0]}`
-          )}`
+          }`
         )
     }
     // console.log(countryExtraContainer);
@@ -1257,10 +1271,21 @@ class App {
       const day = date.getDate()
       const month = date.toLocaleString('en-US', { month: 'short' })
       const weekday = date.toLocaleString('en-US', { weekday: 'long' })
+      const planData = {
+        id: `holiday-${holiday.date}-${holiday.name}`,
+        type: 'holiday',
+        title: holiday.name,
+        date: holiday.date
+      }
+      const isSaved = this.isPlanSaved(planData)
       const holidayCard = document.createElement('div')
       holidayCard.classList.add('holiday-card')
       holidayCard.dataset.date = holiday.date
-      holidayCard.innerHTML = ` <div class="holiday-card-header"> <div class="holiday-date-box"> <span class="day">${day}</span><span class="month">${month}</span> </div> <button class="holiday-action-btn"> <i class="fa-regular fa-heart"></i> </button> </div> <h3>${
+      holidayCard.innerHTML = ` <div class="holiday-card-header"> <div class="holiday-date-box"> <span class="day">${day}</span><span class="month">${month}</span> </div> <button class="holiday-action-btn${
+        isSaved ? ' saved' : ''
+      }"> <i class="fa-${
+        isSaved ? 'solid' : 'regular'
+      } fa-heart"></i> </button> </div> <h3>${
         holiday.name
       }</h3> <p class="holiday-name">${
         holiday.localName
@@ -1303,9 +1328,25 @@ class App {
       const venueCity =
         event._embedded?.venues?.[0]?.city?.name || this.selectedCity || ''
       const eventUrl = event.url || '#'
+      const eventId =
+        event.id ||
+        [eventName, event.dates.start.localDate, venueName, venueCity, eventUrl].join(
+          '|'
+        )
+      const planData = {
+        id: `event-${eventId}`,
+        type: 'event',
+        eventId: String(eventId),
+        title: eventName,
+        date: `${dateFormatted} at ${eventTime}`,
+        venue: `${venueName}, ${venueCity}`,
+        url: eventUrl
+      }
+      const isSaved = this.isPlanSaved(planData)
 
       const eventCard = document.createElement('div')
       eventCard.classList.add('event-card')
+      eventCard.dataset.eventId = String(eventId)
       eventCard.innerHTML = `
         <div class="event-card-image">
           <img
@@ -1314,8 +1355,8 @@ class App {
             onerror="this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400&h=200&fit=crop'"
           />
           <span class="event-card-category">${eventCategory}</span>
-          <button class="event-card-save">
-            <i class="fa-regular fa-heart"></i>
+          <button class="event-card-save${isSaved ? ' saved' : ''}" >
+            <i class="fa-${isSaved ? 'solid' : 'regular'} fa-heart"></i>
           </button>
         </div>
         <div class="event-card-body">
@@ -1329,8 +1370,10 @@ class App {
             </div>
           </div>
           <div class="event-card-footer">
-            <button class="btn-event">
-              <i class="fa-regular fa-heart"></i> Save
+            <button class="btn-event${isSaved ? ' saved' : ''}">
+              <i class="fa-${isSaved ? 'solid' : 'regular'} fa-heart"></i> ${
+                isSaved ? 'In Plans' : 'Save'
+              }
             </button>
             <a href="${eventUrl}" target="_blank" class="btn-buy-ticket">
               <i class="fa-solid fa-ticket"></i> Buy Tickets
@@ -1371,9 +1414,7 @@ class App {
 
     // Calculate percentage of daylight
     const dayLengthMs = new Date(sunData.sunset) - new Date(sunData.sunrise)
-    const dayPercentage = ((dayLengthMs / (1000 * 60 * 60 * 24)) * 100).toFixed(
-      1
-    )
+    const dayPercentage = ((dayLengthMs / (1000 * 60 * 60 * 24)) * 100).toFixed(1)
 
     // Get current date
     const today = new Date()
@@ -1499,6 +1540,13 @@ class App {
       const dayCount = lw.dayCount
       const needsBridge = lw.needBridgeDay
 
+      const title = `Long Weekend #${index + 1}`
+      const dateRange = `${startFormatted} - ${endFormatted}`
+      const isSaved = this.isPlanSaved({
+        id: `lw-${title}-${dateRange}`,
+        type: 'longweekend'
+      })
+
       // Generate visual days representation
       let daysVisual = ''
       const currentDate = new Date(startDate)
@@ -1525,13 +1573,15 @@ class App {
           <span class="lw-badge">
             <i class="fa-solid fa-calendar-days"></i> ${dayCount} Days
           </span>
-          <button class="holiday-action-btn">
-            <i class="fa-regular fa-heart"></i>
+          <button class="holiday-action-btn${
+            isSaved ? ' saved' : ''
+          }" >
+            <i class="fa-${isSaved ? 'solid' : 'regular'} fa-heart"></i>
           </button>
         </div>
-        <h3>Long Weekend #${index + 1}</h3>
+        <h3>${title}</h3>
         <div class="lw-dates">
-          <i class="fa-regular fa-calendar"></i> ${startFormatted} - ${endFormatted}
+          <i class="fa-regular fa-calendar"></i> ${dateRange}
         </div>
         <div class="lw-info-box ${needsBridge ? 'warning' : 'success'}">
           <i class="fa-solid fa-${
@@ -1562,6 +1612,36 @@ class App {
         window.location.hash = `#/${view}`
       })
     )
+  }
+
+  setupMobileMenu = () => {
+    const menuButton = document.querySelector('#mobile-menu-btn')
+    const sidebar = document.querySelector('#sidebar')
+    const overlay = document.querySelector('#sidebar-overlay')
+
+    if (!menuButton || !sidebar || !overlay) return
+
+    const closeMenu = () => {
+      sidebar.classList.remove('open')
+      overlay.classList.remove('active')
+      overlay.classList.add('hidden')
+      menuButton.setAttribute('aria-expanded', 'false')
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = sidebar.classList.toggle('open')
+      overlay.classList.toggle('active', isOpen)
+      overlay.classList.toggle('hidden', !isOpen)
+      menuButton.setAttribute('aria-expanded', String(isOpen))
+    })
+
+    overlay.addEventListener('click', closeMenu)
+    document.querySelectorAll('.nav-item').forEach(navItem => {
+      navItem.addEventListener('click', closeMenu)
+    })
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu()
+    })
   }
 
   clearActiveView = () => {
@@ -1684,15 +1764,34 @@ class App {
   }
 
   saveToPlans = planData => {
-    if (!this.savedPlans.some(p => p.id === planData.id)) {
+    if (!this.isPlanSaved(planData)) {
       this.savedPlans.push(planData)
       localStorage.setItem('wanderlust_plans', JSON.stringify(this.savedPlans))
       this.updatePlansUI()
       this.showToast(`${planData.title} added to your plans!`, 'success')
+      return true
     } else {
       this.showToast('Already in your plans', 'info')
+      return false
     }
   }
+
+  isPlanSaved = planData =>
+    this.savedPlans.some(savedPlan => {
+      if (savedPlan.id === planData.id) return true
+      if (savedPlan.type !== 'event' || planData.type !== 'event') return false
+
+      if (savedPlan.eventId && planData.eventId) {
+        return String(savedPlan.eventId) === String(planData.eventId)
+      }
+
+      const normalize = value => String(value || '').trim().toLowerCase()
+      return (
+        normalize(savedPlan.title) === normalize(planData.title) &&
+        normalize(savedPlan.date) === normalize(planData.date) &&
+        normalize(savedPlan.venue) === normalize(planData.venue)
+      )
+    })
 
   removeFromPlans = async planId => {
     const result = await Swal.fire({
@@ -1959,8 +2058,9 @@ class App {
           }
 
           this.saveToPlans(planData)
-          e.target.closest('.holiday-action-btn').innerHTML =
-            '<i class="fa-solid fa-heart"></i>'
+          const saveButton = e.target.closest('.holiday-action-btn')
+          saveButton.classList.add('saved')
+          saveButton.innerHTML = '<i class="fa-solid fa-heart"></i>'
         }
       }
 
@@ -1983,10 +2083,12 @@ class App {
           const ticketLink =
             eventCard.querySelector('.btn-buy-ticket')?.getAttribute('href') ||
             ''
+          const eventId = eventCard.dataset.eventId
 
           const planData = {
-            id: `event-${title}-${Date.now()}`,
+            id: `event-${eventId}`,
             type: 'event',
+            eventId: eventId,
             title: title,
             date: dateInfo,
             venue: venueInfo,
@@ -1995,11 +2097,15 @@ class App {
           }
 
           this.saveToPlans(planData)
-          const heartBtn =
-            eventCard.querySelector('.event-card-save') ||
-            eventCard.querySelector('.btn-event')
+          const heartBtn = eventCard.querySelector('.event-card-save')
           if (heartBtn) {
+            heartBtn.classList.add('saved')
             heartBtn.innerHTML = '<i class="fa-solid fa-heart"></i>'
+          }
+          const saveBtn = eventCard.querySelector('.btn-event')
+          if (saveBtn) {
+            saveBtn.classList.add('saved')
+            saveBtn.innerHTML = '<i class="fa-solid fa-heart"></i> In Plans'
           }
         }
       }
@@ -2022,8 +2128,9 @@ class App {
           }
 
           this.saveToPlans(planData)
-          e.target.closest('.holiday-action-btn').innerHTML =
-            '<i class="fa-solid fa-heart"></i>'
+          const saveButton = e.target.closest('.holiday-action-btn')
+          saveButton.classList.add('saved')
+          saveButton.innerHTML = '<i class="fa-solid fa-heart"></i>'
         }
       }
     })
