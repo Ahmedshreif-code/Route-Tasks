@@ -5,14 +5,23 @@ import Blogs from "./pages/Blogs"
 import About from "./pages/About"
 import NotFound from "./pages/NotFound"
 function App() {
-  const BrowserRouter=createBrowserRouter([
-    {path:"",element:<MainLayout/>,children:[
-      {path:"",element:<Home/>},
-      {path:"blog",element:<Blogs/>},
-      {path:"about",element:<About/>},
-      {path:"*",element:<NotFound/>}
-    ]},
-  ])
+  const BrowserRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "blog", element: <Blogs /> },
+        { path: "about", element: <About /> },
+        { path: "*", element: <NotFound /> }
+      ]
+    }
+  ],
+  {
+    basename: import.meta.env.BASE_URL
+  }
+)
   return (
     <>
     <RouterProvider router={BrowserRouter}></RouterProvider>
