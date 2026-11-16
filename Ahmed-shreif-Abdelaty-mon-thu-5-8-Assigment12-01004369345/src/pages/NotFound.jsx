@@ -10,7 +10,7 @@ export default function NotFound() {
       <div className="max-w-2xl w-full text-center">
 
         {/* 404 Number */}
-        <h1 className="text-8xl sm:text-9xl font-black tracking-tight bg-gradient-to-r from-[#ff6900] via-[#ffb000] to-[#ff6900] bg-clip-text text-transparent mb-8">
+        <h1 className="text-8xl sm:text-9xl font-black tracking-tight bg-linear-to-r from-[#ff6900] via-[#ffb000] to-[#ff6900] bg-clip-text text-transparent mb-8">
           404
         </h1>
 
@@ -51,7 +51,7 @@ export default function NotFound() {
 
           <NavLink
             to="/blog"
-            className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/5 hover:border-orange-500/40 text-white font-bold transition-all duration-300"
+            className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/2 hover:bg-white/5 hover:border-orange-500/40 text-white font-bold transition-all duration-300"
           >
             <i className="fa-regular fa-newspaper"></i>
             تصفح المقالات
@@ -81,7 +81,7 @@ export default function NotFound() {
                   المدونة
                 </NavLink>
               </li>
-              
+
             </ul>
           
 

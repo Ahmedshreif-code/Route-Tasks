@@ -13,7 +13,7 @@ export default function Navbar () {
         {/* Logo */}
         <Link to='/' className='flex items-center gap-3 shrink-0'>
           <img
-            src='favicon.png'
+            src={`${import.meta.env.BASE_URL}favicon.png`}
             className='w-11 h-11 object-contain'
             alt='Logo'
           />

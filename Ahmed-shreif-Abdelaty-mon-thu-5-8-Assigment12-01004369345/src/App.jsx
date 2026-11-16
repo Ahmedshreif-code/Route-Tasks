@@ -5,7 +5,7 @@ import Blogs from "./pages/Blogs"
 import About from "./pages/About"
 import NotFound from "./pages/NotFound"
 function App() {
-  const BrowserRouter = createBrowserRouter(
+  const router = createBrowserRouter(
   [
     {
       path: "/",
@@ -24,7 +24,7 @@ function App() {
 )
   return (
     <>
-    <RouterProvider router={BrowserRouter}></RouterProvider>
+    <RouterProvider router={router}></RouterProvider>
     </>
   )
 }
