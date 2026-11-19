@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import {siteInfo} from"../assets/posts.json"
+const social=siteInfo.social
+
 
 export default function Footer() {
   return (
@@ -37,7 +40,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
 
               <a
-                href="#"
+                href={social.youtube}
                 aria-label="YouTube"
                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#181818] border border-white/5 text-gray-500 hover:bg-[#ff6900] hover:text-white transition-all"
               >
@@ -45,7 +48,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href={social.linkedin}
                 aria-label="LinkedIn"
                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#181818] border border-white/5 text-gray-500 hover:bg-[#ff6900] hover:text-white transition-all"
               >
@@ -53,7 +56,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href={social.github}
                 aria-label="GitHub"
                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#181818] border border-white/5 text-gray-500 hover:bg-[#ff6900] hover:text-white transition-all"
               >
@@ -61,7 +64,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href={social.twitter}
                 aria-label="X"
                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#181818] border border-white/5 text-gray-500 hover:bg-[#ff6900] hover:text-white transition-all"
               >
@@ -72,7 +75,6 @@ export default function Footer() {
           </div>
 
 
-          {/* Explore Section */}
           <div>
 
             <h3 className="flex items-center gap-3 text-base font-bold mb-7">
@@ -113,7 +115,6 @@ export default function Footer() {
           </div>
 
 
-          {/* Categories Section */}
           <div>
 
             <h3 className="flex items-center gap-3 text-base font-bold mb-7">
@@ -163,7 +164,6 @@ export default function Footer() {
           </div>
 
 
-          {/* Newsletter Section */}
           <div>
 
             <h3 className="flex items-center gap-3 text-base font-bold mb-7">
@@ -199,12 +199,10 @@ export default function Footer() {
       </div>
 
 
-      {/* Bottom Footer */}
       <div className="relative border-t border-white/10">
 
         <div className="max-w-7xl mx-auto px-5 py-6 flex flex-col-reverse md:flex-row items-center justify-between gap-5">
 
-          {/* Policies */}
           <div className="flex items-center gap-5 text-xs text-gray-600">
 
             <a
@@ -224,7 +222,6 @@ export default function Footer() {
           </div>
 
 
-          {/* Copyright */}
           <p className="text-xs text-gray-600 flex items-center gap-1.5">
 
             © 2026 عدسة. صنع بكل

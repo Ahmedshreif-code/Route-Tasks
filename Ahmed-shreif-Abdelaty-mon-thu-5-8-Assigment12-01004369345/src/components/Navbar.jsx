@@ -10,10 +10,9 @@ export default function Navbar () {
       dir='rtl'
     >
       <div className='max-w-7xl mx-auto h-19 px-5 flex items-center justify-between'>
-        {/* Logo */}
         <Link to='/' className='flex items-center gap-3 shrink-0'>
           <img
-            src={`${import.meta.env.BASE_URL}favicon.png`}
+            src='/favicon.png'
             className='w-11 h-11 object-contain'
             alt='Logo'
           />
@@ -26,7 +25,6 @@ export default function Navbar () {
           </div>
         </Link>
 
-        {/* Navigation - Desktop */}
         <div className='hidden md:flex items-center gap-1 p-1.5 rounded-full border border-white/5 bg-[#191919]'>
           <NavLink
             to='/'
@@ -56,9 +54,7 @@ export default function Navbar () {
           </NavLink>
         </div>
 
-        {/* Actions */}
         <div className='flex items-center gap-5'>
-          {/* Search */}
           <button
             aria-label='Search'
             className='text-gray-500 hover:text-white transition-colors'
@@ -66,7 +62,6 @@ export default function Navbar () {
             <i className='fas fa-search'></i>
           </button>
 
-          {/* CTA */}
           <NavLink
             to='/blog'
             className='hidden sm:block bg-[#ff6900] hover:bg-[#e85d00] hover:-translate-y-1 duration-500 transition-all   text-white text-sm font-bold px-8 py-4 rounded-full '
@@ -74,7 +69,6 @@ export default function Navbar () {
             ابدأ القراءة
           </NavLink>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className='md:hidden text-white p-2'
@@ -89,7 +83,6 @@ export default function Navbar () {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <div className='md:hidden bg-[#161616] border-t border-white/5 p-5'>
           <div className='flex flex-col gap-3'>

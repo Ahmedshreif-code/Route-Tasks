@@ -1,9 +1,16 @@
+import Articles from "../components/BlogComponents/Articles";
+import MainSection from "../components/MainSection";
 
 export default function Blogs() {
   return < >
-  <div className="main-section ">
-    <h1 className=" my-19 text-4xl font-bold bg-amber-600 py-5 text-center">Blogs</h1>
-    </div>
+  <MainSection
+   badge="مدونتنا"
+  title="استكشف"
+  highlight="مقالاتنا"
+  description="اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث."
+  />
+  <Articles/>
+
     
     </>;
 }
