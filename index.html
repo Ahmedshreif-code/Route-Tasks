@@ -273,6 +273,7 @@ const TASKS = [
   { key:'assignment-9',  type:'assignment', title:'Assignment 9',  folder:SW+'Assigment9'+SUF,  order:9,  demo:true },
   { key:'assignment-10', type:'assignment', title:'Assignment 10', folder:SAT+'Assigment10'+SUF, order:10, demo:true },
   { key:'assignment-11', type:'assignment', title:'Assignment 11', folder:SAT+'Assigment11'+SUF, order:11, demo:true },
+  { key:'assignment-12', type:'assignment', title:'Assignment 12', folder:P+'mon-thu-5-8-'+'Assigment12'+SUF, order:12, demo:true, built:true },
   { key:'js-challenges', type:'challenges', title:'JS challenges', folder:SW+'Js challanges'+SUF, order:1,  demo:false }
 ];
 const TYPE_LABEL = { assignment:'Assignment', exam:'Exam', challenges:'Challenges', other:'Task' };
@@ -281,7 +282,7 @@ const FILTER_LABEL = { all:'All', assignment:'Assignments', exam:'Exams', challe
 /* ---------- Helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const demoUrl   = t => PAGES + encodeURIComponent(t.folder) + '/';
+const demoUrl   = t => PAGES + encodeURIComponent(t.folder) + (t.built ? '/demo/' : '/');
 const sourceUrl = t => `https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(t.folder)}`;
 const ICON_PLAY = '<svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg>';
 const ICON_CODE = '<svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>';
