@@ -12,7 +12,7 @@ export default function Navbar () {
       <div className='max-w-7xl mx-auto h-19 px-5 flex items-center justify-between'>
         <Link to='/' className='flex items-center gap-3 shrink-0'>
           <img
-            src='/favicon.png'
+            src={`${import.meta.env.BASE_URL}favicon.png`}
             className='w-11 h-11 object-contain'
             alt='Logo'
           />
