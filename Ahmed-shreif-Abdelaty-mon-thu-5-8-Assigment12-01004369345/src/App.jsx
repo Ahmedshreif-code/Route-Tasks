@@ -1,4 +1,4 @@
-import { createBrowserRouter,RouterProvider } from "react-router-dom"
+import { createHashRouter, RouterProvider } from "react-router-dom"
 import MainLayout from "./layouts/MainLayout"
 import Home from "./pages/Home"
 import Blogs from "./pages/Blogs"
@@ -6,7 +6,7 @@ import About from "./pages/About"
 import NotFound from "./pages/NotFound"
 import ArticleDetails from "./components/BlogComponents/ArticleDetails"
 function App() {
-  const router = createBrowserRouter(
+  const router = createHashRouter(
   [
     {
       path: "/",
